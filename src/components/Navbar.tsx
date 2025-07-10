@@ -18,13 +18,16 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-retro-dark/90 border-b border-retro-gray">
+    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/90 border-b border-brand-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-neon-cyan to-neon-pink rounded-lg"></div>
-            <span className="text-xl font-bold gradient-text">Retro Code Labs</span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/cfd9d4ea-f4ca-4c8e-a440-109e23f1b236.png" 
+              alt="Retro Code Labs" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,15 +38,15 @@ const Navbar = () => {
                 to={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? "text-neon-cyan"
-                    : "text-gray-300 hover:text-neon-cyan"
+                    ? "text-brand-orange"
+                    : "text-gray-300 hover:text-brand-orange"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
             <Button 
-              className="bg-gradient-to-r from-neon-cyan to-neon-pink text-black font-semibold hover:from-neon-pink hover:to-neon-cyan transition-all duration-300"
+              className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
               asChild
             >
               <Link to="/contact">Get a Quote</Link>
@@ -66,7 +69,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-retro-dark border-b border-retro-gray">
+        <div className="md:hidden bg-black border-b border-brand-gray">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
               <Link
@@ -74,8 +77,8 @@ const Navbar = () => {
                 to={item.href}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? "text-neon-cyan bg-retro-gray"
-                    : "text-gray-300 hover:text-neon-cyan hover:bg-retro-gray"
+                    ? "text-brand-orange bg-brand-gray"
+                    : "text-gray-300 hover:text-brand-orange hover:bg-brand-gray"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -84,7 +87,7 @@ const Navbar = () => {
             ))}
             <div className="px-3 py-2">
               <Button 
-                className="w-full bg-gradient-to-r from-neon-cyan to-neon-pink text-black font-semibold"
+                className="w-full bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold"
                 asChild
               >
                 <Link to="/contact" onClick={() => setIsOpen(false)}>Get a Quote</Link>

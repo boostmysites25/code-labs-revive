@@ -66,13 +66,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom retro-modern colors
-				'neon-cyan': '#00FFFF',
-				'neon-pink': '#FF00FF',
-				'neon-green': '#39FF14',
-				'retro-blue': '#0A0A23',
-				'retro-dark': '#0D1117',
-				'retro-gray': '#21262D'
+				// Brand colors from your logo
+				'brand-orange': '#FF5722',
+				'brand-red': '#D84315',
+				'brand-dark': '#0D0D0D',
+				'brand-gray': '#1A1A1A'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -118,10 +116,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(0, 255, 255, 0.5)'
+						boxShadow: '0 0 5px rgba(255, 87, 34, 0.5)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(0, 255, 255, 0.8)'
+						boxShadow: '0 0 20px rgba(255, 87, 34, 0.8)'
 					}
 				}
 			},
