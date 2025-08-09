@@ -184,7 +184,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-retro-gray border-retro-gray hover:border-neon-cyan transition-all duration-300 group animate-fade-in overflow-hidden">
+              <Card key={index} className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300 group animate-fade-in overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
                     src={service.image} 
@@ -239,7 +239,7 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
-              <Card key={index} className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300 group animate-fade-in">
+              <Card key={index} className="bg-retro-dark border-brand-orange hover:border-brand-red transition-all duration-300 group animate-fade-in">
                 <CardContent className="p-6 text-center">
                   <div className="text-4xl font-bold gradient-text mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
@@ -266,7 +266,7 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {industries.map((industry, index) => (
-              <Card key={index} className="bg-retro-gray border-retro-gray hover:border-neon-pink transition-all duration-300 group animate-fade-in">
+              <Card key={index} className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300 group animate-fade-in">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-neon-pink to-neon-cyan rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <industry.icon className="w-8 h-8 text-black" />
