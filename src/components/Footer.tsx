@@ -115,21 +115,6 @@ const Footer = () => {
               </div>
             </div>
             
-            <div className="space-y-2">
-              <h4 className="text-sm font-medium text-white">Newsletter</h4>
-              <div className="flex space-x-2">
-                <Input 
-                  placeholder="Enter your email" 
-                  className="bg-brand-gray border-brand-gray text-white placeholder:text-gray-400"
-                />
-                <Button 
-                  size="sm" 
-                  className="bg-brand-orange text-white hover:bg-brand-red"
-                >
-                  Subscribe
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
 
