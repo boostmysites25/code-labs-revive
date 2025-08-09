@@ -48,10 +48,28 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
+    // Create email content
+    const subject = `New Contact Form Submission from ${formData.name}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Project Type: ${formData.projectType || 'Not specified'}
+
+Message:
+${formData.message}
+    `;
+
+    // Create mailto link
+    const mailtoLink = `mailto:Contact@retrocodelabs.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+
+    // Show success message
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Message Prepared!",
+      description: "Your email client should open with the message ready to send.",
     });
 
     // Reset form
