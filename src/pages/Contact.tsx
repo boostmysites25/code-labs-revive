@@ -281,7 +281,7 @@ const Contact = () => {
                       alt="Our modern office space"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    
                     <div className="absolute bottom-4 left-4">
                       <div className="flex items-center space-x-2 text-white">
                         <MapPin className="w-5 h-5 text-brand-orange" />
