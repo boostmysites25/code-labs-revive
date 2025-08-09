@@ -138,14 +138,6 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © 2025 Retro Code Labs. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="#" className="text-gray-400 hover:text-brand-orange text-sm transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="#" className="text-gray-400 hover:text-brand-orange text-sm transition-colors">
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </div>
