@@ -12,7 +12,9 @@ import {
   Calendar,
   Users,
   Award,
-  Code
+  Code,
+  Star,
+  Quote
 } from "lucide-react";
 import aboutOffice from "@/assets/about-office.jpg";
 import aboutInnovation from "@/assets/about-innovation.jpg";
@@ -48,34 +50,38 @@ const About = () => {
     }
   ];
 
-  const team = [
+  const testimonials = [
     {
-      name: "Alex Chen",
-      role: "Founder & CEO",
-      bio: "Full-stack developer with 8+ years of experience in modern web technologies.",
-      image: teamAlex,
-      skills: ["React", "Node.js", "AI/ML"]
+      name: "David Kim",
+      company: "TechStart Inc.",
+      role: "CEO",
+      content: "Retro Code Labs transformed our digital presence with their unique retro-modern approach. Our website now perfectly captures our brand identity while delivering exceptional performance.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Sarah Martinez", 
-      role: "Lead Designer",
-      bio: "Creative visionary specializing in retro-modern UI/UX design and brand identity.",
-      image: teamSarah,
-      skills: ["UI/UX", "Branding", "Motion Design"]
+      name: "Maria Rodriguez",
+      company: "Creative Studios",
+      role: "Creative Director",
+      content: "The team's attention to detail and innovative design solutions exceeded our expectations. They delivered a mobile app that our users absolutely love.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1494790108755-2616b2617fb2?auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Mike Thompson",
-      role: "Senior Developer", 
-      bio: "Mobile and web development expert with a passion for performance optimization.",
-      image: teamMike,
-      skills: ["React Native", "AMP", "Performance"]
+      name: "James Wilson",
+      company: "E-commerce Plus",
+      role: "Founder",
+      content: "Working with Retro Code Labs was a game-changer. Their AMP development expertise helped us achieve lightning-fast loading speeds and better search rankings.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Project Manager",
-      bio: "Agile methodology expert ensuring smooth project delivery and client satisfaction.",
-      image: teamEmily,
-      skills: ["Agile", "Strategy", "Client Relations"]
+      name: "Lisa Chen",
+      company: "AI Solutions Corp",
+      role: "CTO",
+      content: "Their AI integration capabilities are outstanding. They seamlessly integrated machine learning features into our platform, enhancing user experience significantly.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -256,42 +262,46 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Testimonials Section */}
       <section className="section-padding bg-retro-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Meet Our <span className="gradient-text">Team</span>
+              What Our <span className="gradient-text">Clients Say</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              The creative minds behind Retro Code Labs. We're passionate professionals 
-              dedicated to bringing your digital vision to life.
+              Don't just take our word for it - hear from the businesses we've helped transform.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-retro-gray border-retro-gray hover:border-neon-cyan transition-all duration-300 group animate-fade-in">
-                <CardContent className="p-6 text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <Quote className="w-8 h-8 text-neon-cyan mr-3" />
+                    <div className="flex">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-1">{member.name}</h3>
-                  <p className="text-neon-cyan mb-3">{member.role}</p>
-                  <p className="text-gray-400 text-sm mb-4">{member.bio}</p>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {member.skills.map((skill, skillIndex) => (
-                      <span 
-                        key={skillIndex} 
-                        className="px-2 py-1 text-xs bg-neon-cyan/20 text-neon-cyan rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                  <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+                    "{testimonial.content}"
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-semibold">{testimonial.name}</h4>
+                      <p className="text-neon-cyan text-sm">{testimonial.role}</p>
+                      <p className="text-gray-400 text-sm">{testimonial.company}</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
