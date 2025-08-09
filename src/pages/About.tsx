@@ -19,6 +19,10 @@ import aboutInnovation from "@/assets/about-innovation.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import aboutVision from "@/assets/about-vision.jpg";
 import aboutValues from "@/assets/about-values.jpg";
+import teamAlex from "@/assets/team-alex.jpg";
+import teamSarah from "@/assets/team-sarah.jpg";
+import teamMike from "@/assets/team-mike.jpg";
+import teamEmily from "@/assets/team-emily.jpg";
 
 const About = () => {
   const values = [
@@ -49,28 +53,28 @@ const About = () => {
       name: "Alex Chen",
       role: "Founder & CEO",
       bio: "Full-stack developer with 8+ years of experience in modern web technologies.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+      image: teamAlex,
       skills: ["React", "Node.js", "AI/ML"]
     },
     {
       name: "Sarah Martinez", 
       role: "Lead Designer",
       bio: "Creative visionary specializing in retro-modern UI/UX design and brand identity.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b2617fb2?auto=format&fit=crop&w=400&q=80",
+      image: teamSarah,
       skills: ["UI/UX", "Branding", "Motion Design"]
     },
     {
       name: "Mike Thompson",
       role: "Senior Developer", 
       bio: "Mobile and web development expert with a passion for performance optimization.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      image: teamMike,
       skills: ["React Native", "AMP", "Performance"]
     },
     {
       name: "Emily Rodriguez",
       role: "Project Manager",
       bio: "Agile methodology expert ensuring smooth project delivery and client satisfaction.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      image: teamEmily,
       skills: ["Agile", "Strategy", "Client Relations"]
     }
   ];
