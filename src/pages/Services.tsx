@@ -16,6 +16,14 @@ import {
   BarChart,
   Lock
 } from "lucide-react";
+import servicesHero from "@/assets/services-hero.jpg";
+import webDevService from "@/assets/web-development-service.jpg";
+import mobileDevService from "@/assets/mobile-development-service.jpg";
+import ampDevService from "@/assets/amp-development-service.jpg";
+import apiDevService from "@/assets/api-development-service.jpg";
+import uiuxService from "@/assets/uiux-design-service.jpg";
+import aiService from "@/assets/ai-integration-service.jpg";
+import teamCollaboration from "@/assets/team-collaboration.jpg";
 
 const Services = () => {
   const services = [
@@ -31,7 +39,8 @@ const Services = () => {
         "Cross-browser Compatible"
       ],
       link: "/web-development",
-      color: "from-blue-500 to-cyan-400"
+      color: "from-blue-500 to-cyan-400",
+      image: webDevService
     },
     {
       icon: Smartphone,
@@ -45,7 +54,8 @@ const Services = () => {
         "Push Notifications"
       ],
       link: "/contact",
-      color: "from-purple-500 to-pink-400"
+      color: "from-purple-500 to-pink-400",
+      image: mobileDevService
     },
     {
       icon: Zap,
@@ -59,7 +69,8 @@ const Services = () => {
         "Analytics Integration"
       ],
       link: "/amp-development",
-      color: "from-yellow-500 to-orange-400"
+      color: "from-yellow-500 to-orange-400",
+      image: ampDevService
     },
     {
       icon: Database,
@@ -73,7 +84,8 @@ const Services = () => {
         "Documentation"
       ],
       link: "/contact",
-      color: "from-green-500 to-emerald-400"
+      color: "from-green-500 to-emerald-400",
+      image: apiDevService
     },
     {
       icon: Palette,
@@ -87,7 +99,8 @@ const Services = () => {
         "Design Systems"
       ],
       link: "/contact",
-      color: "from-red-500 to-pink-400"
+      color: "from-red-500 to-pink-400",
+      image: uiuxService
     },
     {
       icon: Brain,
@@ -101,7 +114,8 @@ const Services = () => {
         "AI Analytics"
       ],
       link: "/contact",
-      color: "from-indigo-500 to-purple-400"
+      color: "from-indigo-500 to-purple-400",
+      image: aiService
     }
   ];
 
@@ -138,8 +152,14 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-retro-dark via-retro-blue to-retro-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative section-padding overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${servicesHero})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-retro-dark/90 via-retro-blue/80 to-retro-dark/90"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               Our <span className="gradient-text">Services</span>
@@ -164,11 +184,19 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-retro-gray border-retro-gray hover:border-neon-cyan transition-all duration-300 group animate-fade-in">
-                <CardContent className="p-6">
-                  <div className={`w-16 h-16 mb-6 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="w-8 h-8 text-white" />
+              <Card key={index} className="bg-retro-gray border-retro-gray hover:border-neon-cyan transition-all duration-300 group animate-fade-in overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-retro-gray/90 to-transparent"></div>
+                  <div className={`absolute top-4 right-4 w-12 h-12 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center`}>
+                    <service.icon className="w-6 h-6 text-white" />
                   </div>
+                </div>
+                <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
                   <p className="text-gray-400 mb-6">{service.description}</p>
                   
@@ -287,8 +315,8 @@ const Services = () => {
             </div>
             <div className="animate-fade-in">
               <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
-                alt="Development team"
+                src={teamCollaboration}
+                alt="Development team collaboration"
                 className="rounded-lg shadow-2xl"
               />
             </div>
