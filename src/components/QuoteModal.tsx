@@ -30,10 +30,39 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would normally send the data to your backend
-    console.log("Quote request:", formData);
-    toast.success("Quote request submitted successfully! We'll get back to you soon.");
+    
+    // Basic form validation
+    if (!formData.name || !formData.email || !formData.projectType || !formData.description) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
+    // Create email content
+    const subject = `Quote Request from ${formData.name} - ${formData.projectType}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Company: ${formData.company || 'Not provided'}
+Project Type: ${formData.projectType}
+Budget Range: ${formData.budget || 'Not specified'}
+Timeline: ${formData.timeline || 'Not specified'}
+
+Project Description:
+${formData.description}
+    `;
+
+    // Create mailto link
+    const mailtoLink = `mailto:Contact@retrocodelabs.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+
+    // Show success message
+    toast.success("Quote request prepared! Your email client should open with the message ready to send.");
+    
     onClose();
+    
     // Reset form
     setFormData({
       name: "",
