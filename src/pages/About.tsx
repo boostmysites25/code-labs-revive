@@ -434,7 +434,7 @@ const About = () => {
                 <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} animate-fade-in`}>
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <Card className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300">
-                      <CardContent className="p-6">
+                      <CardContent className="p-6 border border-brand-orange rounded-lg">
                         <div className="text-2xl font-bold gradient-text mb-2">{event.year}</div>
                         <h3 className="text-xl font-semibold text-white mb-3">{event.title}</h3>
                         <p className="text-gray-400">{event.description}</p>
