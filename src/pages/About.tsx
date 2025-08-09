@@ -14,6 +14,11 @@ import {
   Award,
   Code
 } from "lucide-react";
+import aboutOffice from "@/assets/about-office.jpg";
+import aboutInnovation from "@/assets/about-innovation.jpg";
+import aboutMission from "@/assets/about-mission.jpg";
+import aboutVision from "@/assets/about-vision.jpg";
+import aboutValues from "@/assets/about-values.jpg";
 
 const About = () => {
   const values = [
@@ -106,8 +111,15 @@ const About = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-retro-dark via-retro-blue to-retro-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative section-padding bg-gradient-to-br from-retro-dark via-retro-blue to-retro-dark overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={aboutOffice} 
+            alt="Retro Code Labs office workspace"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               About <span className="gradient-text">Retro Code Labs</span>
@@ -149,8 +161,8 @@ const About = () => {
             </div>
             <div className="animate-fade-in">
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                alt="Team collaboration"
+                src={aboutInnovation}
+                alt="Digital innovation and technology"
                 className="rounded-lg shadow-2xl"
               />
             </div>
@@ -162,8 +174,16 @@ const About = () => {
       <section className="section-padding bg-retro-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <Card className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300 animate-fade-in">
-              <CardContent className="p-8 text-center">
+            <Card className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300 animate-fade-in overflow-hidden">
+              <div className="relative h-48">
+                <img 
+                  src={aboutMission} 
+                  alt="Mission control center"
+                  className="w-full h-full object-cover opacity-60"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-retro-dark to-transparent"></div>
+              </div>
+              <CardContent className="p-8 text-center relative">
                 <Target className="w-16 h-16 mx-auto mb-6 text-neon-cyan" />
                 <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
                 <p className="text-gray-300">
@@ -174,8 +194,16 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-retro-dark border-retro-dark hover:border-neon-pink transition-all duration-300 animate-fade-in">
-              <CardContent className="p-8 text-center">
+            <Card className="bg-retro-dark border-retro-dark hover:border-neon-pink transition-all duration-300 animate-fade-in overflow-hidden">
+              <div className="relative h-48">
+                <img 
+                  src={aboutVision} 
+                  alt="Futuristic vision concept"
+                  className="w-full h-full object-cover opacity-60"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-retro-dark to-transparent"></div>
+              </div>
+              <CardContent className="p-8 text-center relative">
                 <Eye className="w-16 h-16 mx-auto mb-6 text-neon-pink" />
                 <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
                 <p className="text-gray-300">
@@ -190,8 +218,15 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="section-padding bg-retro-blue">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative section-padding bg-retro-blue overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src={aboutValues} 
+            alt="Retro gaming office space"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our <span className="gradient-text">Core Values</span>
