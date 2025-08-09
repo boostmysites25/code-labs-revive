@@ -207,12 +207,6 @@ const About = () => {
                 From startups to enterprises, we help businesses stand out in the digital landscape 
                 with our unique retro-modern approach.
               </p>
-              <Button 
-                className="bg-gradient-to-r from-neon-cyan to-neon-pink text-black font-semibold hover:from-neon-pink hover:to-neon-cyan transition-all duration-300"
-                asChild
-              >
-                <Link to="/contact">Work With Us</Link>
-              </Button>
             </div>
             <div className="animate-fade-in">
               <img 
