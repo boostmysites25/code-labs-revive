@@ -210,8 +210,8 @@ const Services = () => {
                   </ul>
 
                   <Button 
-                    variant="outline"
-                    className="w-full border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300"
+                    variant="orange"
+                    className="w-full"
                     asChild
                   >
                     <Link to={service.link}>
