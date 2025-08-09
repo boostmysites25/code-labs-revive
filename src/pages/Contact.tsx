@@ -75,13 +75,13 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@retrocodelabs.com",
+      value: "Contact@retrocodelabs.in",
       description: "Send us an email anytime"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+91 8309836039",
       description: "Mon-Fri from 9am to 6pm"
     },
     {
@@ -176,7 +176,7 @@ const Contact = () => {
                         <Input
                           value={formData.phone}
                           onChange={(e) => handleInputChange("phone", e.target.value)}
-                          placeholder="+1 (555) 123-4567"
+                          placeholder="+91 8309836039"
                           className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
                         />
                       </div>
