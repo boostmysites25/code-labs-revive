@@ -3,9 +3,11 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import QuoteModal from "./QuoteModal";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
@@ -47,9 +49,9 @@ const Navbar = () => {
             ))}
             <Button 
               className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
-              asChild
+              onClick={() => setIsQuoteModalOpen(true)}
             >
-              <Link to="/contact">Get a Quote</Link>
+              Get a Quote
             </Button>
           </div>
 
@@ -88,14 +90,22 @@ const Navbar = () => {
             <div className="px-3 py-2">
               <Button 
                 className="w-full bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold"
-                asChild
+                onClick={() => {
+                  setIsQuoteModalOpen(true);
+                  setIsOpen(false);
+                }}
               >
-                <Link to="/contact" onClick={() => setIsOpen(false)}>Get a Quote</Link>
+                Get a Quote
               </Button>
             </div>
           </div>
         </div>
       )}
+      
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </nav>
   );
 };
