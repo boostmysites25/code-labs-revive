@@ -411,13 +411,6 @@ const About = () => {
               ))}
             </div>
             
-            {/* Scroll indicator */}
-            <div className="flex justify-center mt-6">
-              <div className="flex items-center gap-2 text-gray-400">
-                <ArrowRight className="w-4 h-4" />
-                <span className="text-sm">Scroll to explore more projects</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
