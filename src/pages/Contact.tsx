@@ -272,28 +272,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Office Image */}
-              <Card className="bg-retro-gray border-brand-orange">
-                <CardContent className="p-0">
-                  <div className="relative h-64 overflow-hidden rounded-lg">
-                    <img 
-                      src={contactOffice}
-                      alt="Our modern office space"
-                      className="w-full h-full object-cover"
-                    />
-                    
-                    <div className="absolute bottom-4 left-4">
-                      <div className="flex items-center space-x-2 text-white">
-                        <MapPin className="w-5 h-5 text-brand-orange" />
-                        <div>
-                          <p className="font-semibold">San Francisco, CA</p>
-                          <p className="text-sm text-gray-300">123 Tech Street, Suite 100</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
