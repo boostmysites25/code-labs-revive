@@ -66,7 +66,7 @@ All colors MUST be HSL.
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-neon-cyan to-neon-pink bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent;
   }
 
   .brand-glow {
