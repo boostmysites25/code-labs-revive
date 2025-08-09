@@ -277,34 +277,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section-padding bg-brand-orange">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
-                <Users className="w-8 h-8 text-brand-orange" />
-              </div>
-              <h3 className="text-3xl font-bold text-white mb-2">100+</h3>
-              <p className="text-white/90">Happy Clients</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
-                <Star className="w-8 h-8 text-brand-orange" />
-              </div>
-              <h3 className="text-3xl font-bold text-white mb-2">4.9/5</h3>
-              <p className="text-white/90">Client Satisfaction</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
-                <Award className="w-8 h-8 text-brand-orange" />
-              </div>
-              <h3 className="text-3xl font-bold text-white mb-2">5+</h3>
-              <p className="text-white/90">Years Experience</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Team & Support Section */}
       <section className="section-padding bg-retro-dark">
