@@ -28,6 +28,10 @@ import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
+import clientDavid from "@/assets/client-david.jpg";
+import clientMaria from "@/assets/client-maria.jpg";
+import clientJames from "@/assets/client-james.jpg";
+import clientLisa from "@/assets/client-lisa.jpg";
 
 const About = () => {
   const values = [
@@ -60,7 +64,7 @@ const About = () => {
       role: "CEO",
       content: "Retro Code Labs transformed our digital presence with their unique retro-modern approach. Our website now perfectly captures our brand identity while delivering exceptional performance.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+      image: clientDavid
     },
     {
       name: "Maria Rodriguez",
@@ -68,7 +72,7 @@ const About = () => {
       role: "Creative Director",
       content: "The team's attention to detail and innovative design solutions exceeded our expectations. They delivered a mobile app that our users absolutely love.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b2617fb2?auto=format&fit=crop&w=400&q=80"
+      image: clientMaria
     },
     {
       name: "James Wilson",
@@ -76,7 +80,7 @@ const About = () => {
       role: "Founder",
       content: "Working with Retro Code Labs was a game-changer. Their AMP development expertise helped us achieve lightning-fast loading speeds and better search rankings.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80"
+      image: clientJames
     },
     {
       name: "Lisa Chen",
@@ -84,7 +88,7 @@ const About = () => {
       role: "CTO",
       content: "Their AI integration capabilities are outstanding. They seamlessly integrated machine learning features into our platform, enhancing user experience significantly.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
+      image: clientLisa
     }
   ];
 
