@@ -38,18 +38,36 @@ const Footer = () => {
               that combine innovative design with powerful functionality.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-brand-orange">
-                <Facebook size={18} />
-              </Button>
+              <a 
+                href="https://www.facebook.com/share/1K4X6EY6e4/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-brand-orange">
+                  <Facebook size={18} />
+                </Button>
+              </a>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-brand-orange">
                 <Twitter size={18} />
               </Button>
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-brand-orange">
-                <Linkedin size={18} />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-brand-orange">
-                <Instagram size={18} />
-              </Button>
+              <a 
+                href="https://www.linkedin.com/company/retrocode-labs/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-brand-orange">
+                  <Linkedin size={18} />
+                </Button>
+              </a>
+              <a 
+                href="https://www.instagram.com/retrocode_labs" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-brand-orange">
+                  <Instagram size={18} />
+                </Button>
+              </a>
             </div>
           </div>
 
