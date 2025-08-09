@@ -157,7 +157,7 @@ const Services = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${servicesHero})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-retro-dark/90 via-retro-blue/80 to-retro-dark/90"></div>
+          <div className="absolute inset-0 bg-black/70"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
