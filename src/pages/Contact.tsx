@@ -16,8 +16,15 @@ import {
   Facebook,
   Twitter,
   Linkedin,
-  Instagram
+  Instagram,
+  Star,
+  Users,
+  Award
 } from "lucide-react";
+import contactHero from "@/assets/contact-hero.jpg";
+import contactOffice from "@/assets/contact-office.jpg";
+import contactTeam from "@/assets/contact-team.jpg";
+import contactSupport from "@/assets/contact-support.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -101,8 +108,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-retro-dark via-retro-blue to-retro-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative section-padding overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${contactHero})` }}
+        >
+          <div className="absolute inset-0 bg-black/70"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               Get In <span className="gradient-text">Touch</span>
@@ -121,10 +134,10 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="animate-fade-in">
-              <Card className="bg-retro-gray border-retro-gray">
+              <Card className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
-                    <MessageSquare className="w-6 h-6 text-neon-cyan mr-3" />
+                    <MessageSquare className="w-6 h-6 text-brand-orange mr-3" />
                     <h2 className="text-2xl font-bold text-white">Send Us a Message</h2>
                   </div>
                   
@@ -138,7 +151,7 @@ const Contact = () => {
                           value={formData.name}
                           onChange={(e) => handleInputChange("name", e.target.value)}
                           placeholder="Your full name"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-neon-cyan"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
                         />
                       </div>
                       <div>
@@ -150,7 +163,7 @@ const Contact = () => {
                           value={formData.email}
                           onChange={(e) => handleInputChange("email", e.target.value)}
                           placeholder="your@email.com"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-neon-cyan"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
                         />
                       </div>
                     </div>
@@ -164,7 +177,7 @@ const Contact = () => {
                           value={formData.phone}
                           onChange={(e) => handleInputChange("phone", e.target.value)}
                           placeholder="+1 (555) 123-4567"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-neon-cyan"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
                         />
                       </div>
                       <div>
@@ -172,7 +185,7 @@ const Contact = () => {
                           Project Type
                         </label>
                         <Select onValueChange={(value) => handleInputChange("projectType", value)}>
-                          <SelectTrigger className="bg-retro-dark border-retro-dark text-white focus:border-neon-cyan">
+                          <SelectTrigger className="bg-retro-dark border-retro-dark text-white focus:border-brand-orange">
                             <SelectValue placeholder="Select project type" />
                           </SelectTrigger>
                           <SelectContent className="bg-retro-dark border-retro-gray">
@@ -197,14 +210,15 @@ const Contact = () => {
                         onChange={(e) => handleInputChange("message", e.target.value)}
                         placeholder="Tell us about your project..."
                         rows={6}
-                        className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-neon-cyan resize-none"
+                        className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange resize-none"
                       />
                     </div>
 
                     <Button 
                       type="submit"
+                      variant="orange"
                       size="lg"
-                      className="w-full bg-gradient-to-r from-neon-cyan to-neon-pink text-black font-semibold hover:from-neon-pink hover:to-neon-cyan transition-all duration-300"
+                      className="w-full"
                     >
                       Send Message <Send className="ml-2 w-4 h-4" />
                     </Button>
@@ -219,15 +233,15 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
-                    <Card key={index} className="bg-retro-gray border-retro-gray hover:border-neon-cyan transition-all duration-300">
+                    <Card key={index} className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-neon-cyan to-neon-pink rounded-lg flex items-center justify-center flex-shrink-0">
-                            <info.icon className="w-6 h-6 text-black" />
+                          <div className="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center flex-shrink-0">
+                            <info.icon className="w-6 h-6 text-white" />
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
-                            <p className="text-neon-cyan font-medium mb-1">{info.value}</p>
+                            <p className="text-brand-orange font-medium mb-1">{info.value}</p>
                             <p className="text-gray-400 text-sm">{info.description}</p>
                           </div>
                         </div>
@@ -246,7 +260,7 @@ const Contact = () => {
                       key={index}
                       variant="outline"
                       size="lg"
-                      className="border-retro-gray hover:border-neon-cyan hover:bg-neon-cyan/10 transition-all duration-300"
+                      className="border-brand-orange hover:border-brand-red hover:bg-brand-orange/10 transition-all duration-300"
                       asChild
                     >
                       <a href={social.href} className="flex items-center space-x-2">
@@ -258,18 +272,127 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <Card className="bg-retro-gray border-retro-gray">
+              {/* Office Image */}
+              <Card className="bg-retro-gray border-brand-orange">
                 <CardContent className="p-0">
-                  <div className="h-64 bg-gradient-to-br from-retro-blue to-retro-dark rounded-lg flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-12 h-12 text-neon-cyan mx-auto mb-4" />
-                      <p className="text-white font-semibold">San Francisco, CA</p>
-                      <p className="text-gray-400">123 Tech Street, Suite 100</p>
+                  <div className="relative h-64 overflow-hidden rounded-lg">
+                    <img 
+                      src={contactOffice}
+                      alt="Our modern office space"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <div className="flex items-center space-x-2 text-white">
+                        <MapPin className="w-5 h-5 text-brand-orange" />
+                        <div>
+                          <p className="font-semibold">San Francisco, CA</p>
+                          <p className="text-sm text-gray-300">123 Tech Street, Suite 100</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="section-padding bg-brand-orange">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
+                <Users className="w-8 h-8 text-brand-orange" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-2">100+</h3>
+              <p className="text-white/90">Happy Clients</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
+                <Star className="w-8 h-8 text-brand-orange" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-2">4.9/5</h3>
+              <p className="text-white/90">Client Satisfaction</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
+                <Award className="w-8 h-8 text-brand-orange" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-2">5+</h3>
+              <p className="text-white/90">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team & Support Section */}
+      <section className="section-padding bg-retro-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="animate-fade-in">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Meet Our <span className="gradient-text">Team</span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-6">
+                Our experienced team of developers, designers, and project managers 
+                are dedicated to bringing your vision to life with cutting-edge technology 
+                and innovative solutions.
+              </p>
+              <div className="space-y-4">
+                {[
+                  "Expert developers with 5+ years experience",
+                  "Dedicated project managers for seamless communication",
+                  "Creative designers with modern aesthetic vision",
+                  "24/7 support team for ongoing assistance"
+                ].map((point, index) => (
+                  <div key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-brand-orange rounded-full mr-4"></div>
+                    <span className="text-gray-300">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="animate-fade-in">
+              <img 
+                src={contactTeam}
+                alt="Our development team"
+                className="rounded-lg shadow-2xl border border-brand-orange"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1 animate-fade-in">
+              <img 
+                src={contactSupport}
+                alt="Customer support"
+                className="rounded-lg shadow-2xl border border-brand-orange"
+              />
+            </div>
+            <div className="order-1 lg:order-2 animate-fade-in">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                World-Class <span className="gradient-text">Support</span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-6">
+                We believe in providing exceptional support throughout your project 
+                and beyond. Our dedicated support team ensures your success at every step.
+              </p>
+              <div className="space-y-4">
+                {[
+                  "Rapid response within 24 hours",
+                  "Dedicated account manager for each project",
+                  "Comprehensive project documentation",
+                  "Post-launch monitoring and maintenance"
+                ].map((point, index) => (
+                  <div key={index} className="flex items-center">
+                    <div className="w-2 h-2 bg-brand-orange rounded-full mr-4"></div>
+                    <span className="text-gray-300">{point}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -306,7 +429,7 @@ const Contact = () => {
                 answer: "Absolutely! We can audit, improve, or completely rebuild existing applications. We also offer consulting services to help optimize your current digital solutions."
               }
             ].map((faq, index) => (
-              <Card key={index} className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300 animate-fade-in">
+              <Card key={index} className="bg-retro-dark border-brand-orange hover:border-brand-red transition-all duration-300 animate-fade-in">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
                   <p className="text-gray-400">{faq.answer}</p>
