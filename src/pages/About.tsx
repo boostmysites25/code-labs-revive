@@ -14,17 +14,20 @@ import {
   Award,
   Code,
   Star,
-  Quote
+  Quote,
+  ExternalLink,
+  ArrowRight
 } from "lucide-react";
 import aboutOffice from "@/assets/about-office.jpg";
 import aboutInnovation from "@/assets/about-innovation.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import aboutVision from "@/assets/about-vision.jpg";
 import aboutValues from "@/assets/about-values.jpg";
-import teamAlex from "@/assets/team-alex.jpg";
-import teamSarah from "@/assets/team-sarah.jpg";
-import teamMike from "@/assets/team-mike.jpg";
-import teamEmily from "@/assets/team-emily.jpg";
+import portfolio1 from "@/assets/portfolio-1.jpg";
+import portfolio2 from "@/assets/portfolio-2.jpg";
+import portfolio3 from "@/assets/portfolio-3.jpg";
+import portfolio4 from "@/assets/portfolio-4.jpg";
+import portfolio5 from "@/assets/portfolio-5.jpg";
 
 const About = () => {
   const values = [
@@ -82,6 +85,44 @@ const About = () => {
       content: "Their AI integration capabilities are outstanding. They seamlessly integrated machine learning features into our platform, enhancing user experience significantly.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
+    }
+  ];
+
+  const portfolioItems = [
+    {
+      title: "Modern Web Application",
+      category: "Web Development",
+      description: "A sleek, responsive web application with retro-futuristic design elements and modern functionality.",
+      image: portfolio1,
+      tags: ["React", "TypeScript", "Tailwind"]
+    },
+    {
+      title: "Mobile App Interface",
+      category: "Mobile Development", 
+      description: "Intuitive mobile application with vibrant UI design and seamless user experience.",
+      image: portfolio2,
+      tags: ["React Native", "UI/UX", "Mobile"]
+    },
+    {
+      title: "E-commerce Platform",
+      category: "Web Development",
+      description: "Professional e-commerce solution with modern design and optimized performance.",
+      image: portfolio3,
+      tags: ["E-commerce", "AMP", "Performance"]
+    },
+    {
+      title: "AI Dashboard",
+      category: "AI Integration",
+      description: "Advanced AI-powered dashboard with data visualization and predictive analytics.",
+      image: portfolio4,
+      tags: ["AI/ML", "Dashboard", "Analytics"]
+    },
+    {
+      title: "Corporate Website",
+      category: "Web Development",
+      description: "Professional corporate website with retro-tech styling and modern functionality.",
+      image: portfolio5,
+      tags: ["Corporate", "SEO", "Responsive"]
     }
   ];
 
@@ -306,6 +347,79 @@ const About = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="section-padding bg-retro-gray">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our <span className="gradient-text">Portfolio</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Showcasing our latest projects and digital innovations across different industries.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory">
+              {portfolioItems.map((item, index) => (
+                <div 
+                  key={index} 
+                  className="flex-none w-80 snap-start group animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <Card className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-500 overflow-hidden h-full group-hover:scale-105">
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-retro-dark via-transparent to-transparent opacity-60"></div>
+                      <div className="absolute top-4 right-4">
+                        <ExternalLink className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                    </div>
+                    <CardContent className="p-6">
+                      <div className="mb-3">
+                        <span className="text-neon-cyan text-sm font-medium">{item.category}</span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-neon-cyan transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {item.tags.map((tag, tagIndex) => (
+                          <span 
+                            key={tagIndex} 
+                            className="px-3 py-1 text-xs bg-neon-cyan/10 text-neon-cyan rounded-full border border-neon-cyan/20"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center text-white group-hover:text-neon-cyan transition-colors duration-300">
+                        <span className="text-sm font-medium">View Project</span>
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+            
+            {/* Scroll indicator */}
+            <div className="flex justify-center mt-6">
+              <div className="flex items-center gap-2 text-gray-400">
+                <ArrowRight className="w-4 h-4" />
+                <span className="text-sm">Scroll to explore more projects</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
