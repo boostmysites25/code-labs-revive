@@ -14,6 +14,12 @@ import {
   Trophy,
   Rocket
 } from "lucide-react";
+import heroBanner from "@/assets/hero-banner.jpg";
+import webPortfolio1 from "@/assets/web-portfolio-1.jpg";
+import webPortfolio2 from "@/assets/web-portfolio-2.jpg";
+import mobilePortfolio1 from "@/assets/mobile-portfolio-1.jpg";
+import mobilePortfolio2 from "@/assets/mobile-portfolio-2.jpg";
+import aiPortfolio1 from "@/assets/ai-portfolio-1.jpg";
 
 const Index = () => {
   const services = [
@@ -44,19 +50,31 @@ const Index = () => {
       title: "E-Commerce Platform",
       description: "Modern online store with advanced features",
       tech: "React, Node.js, Stripe",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
+      image: webPortfolio1
+    },
+    {
+      title: "Corporate Website",
+      description: "Professional business website with modern design",
+      tech: "Next.js, Tailwind CSS",
+      image: webPortfolio2
     },
     {
       title: "Mobile Banking App",
       description: "Secure financial application with biometric auth",
       tech: "React Native, Firebase",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
+      image: mobilePortfolio1
+    },
+    {
+      title: "E-Commerce Mobile App",
+      description: "Shopping app with seamless user experience",
+      tech: "Flutter, Firebase",
+      image: mobilePortfolio2
     },
     {
       title: "AI Analytics Dashboard",
       description: "Real-time data visualization with ML insights",
       tech: "Next.js, Python, TensorFlow",
-      image: "https://images.unsplash.com/photo-1551088795-6ac35d46c1b6?auto=format&fit=crop&w=800&q=80"
+      image: aiPortfolio1
     }
   ];
 
@@ -87,8 +105,16 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 section-padding bg-brand-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-24 pb-16 section-padding bg-brand-dark overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={heroBanner} 
+            alt="Modern tech workspace with coding and development setup"
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 to-transparent"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-white">
               Bringing <span className="gradient-text">Retro Vibes</span> to{" "}
@@ -182,7 +208,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {projects.slice(0, 6).map((project, index) => (
               <Card key={index} className="bg-retro-gray border-retro-gray overflow-hidden group hover:border-neon-cyan transition-all duration-300 animate-fade-in">
                 <div className="aspect-video overflow-hidden">
                   <img 

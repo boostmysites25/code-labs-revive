@@ -12,6 +12,8 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import WebDevelopment from "./pages/WebDevelopment";
 import AMPDevelopment from "./pages/AMPDevelopment";
+import MobileDevelopment from "./pages/MobileDevelopment";
+import AIIntegration from "./pages/AIIntegration";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/web-development" element={<WebDevelopment />} />
+            <Route path="/mobile-development" element={<MobileDevelopment />} />
+            <Route path="/ai-integration" element={<AIIntegration />} />
             <Route path="/amp-development" element={<AMPDevelopment />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
