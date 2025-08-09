@@ -47,9 +47,6 @@ const Footer = () => {
                   <Facebook size={18} />
                 </Button>
               </a>
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-brand-orange">
-                <Twitter size={18} />
-              </Button>
               <a 
                 href="https://www.linkedin.com/company/retrocode-labs/" 
                 target="_blank" 
