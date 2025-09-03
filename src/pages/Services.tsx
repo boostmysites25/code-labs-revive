@@ -53,7 +53,7 @@ const Services = () => {
         "App Store Deployment",
         "Push Notifications"
       ],
-      link: "/contact",
+      link: "/mobile-development",
       color: "from-purple-500 to-pink-400",
       image: mobileDevService
     },
@@ -83,7 +83,7 @@ const Services = () => {
         "Authentication & Security",
         "Documentation"
       ],
-      link: "/contact",
+      link: "/ai-integration",
       color: "from-green-500 to-emerald-400",
       image: apiDevService
     },
@@ -98,7 +98,7 @@ const Services = () => {
         "Usability Testing",
         "Design Systems"
       ],
-      link: "/contact",
+      link: "/ui-design",
       color: "from-red-500 to-pink-400",
       image: uiuxService
     },
@@ -113,7 +113,7 @@ const Services = () => {
         "Chatbot Development",
         "AI Analytics"
       ],
-      link: "/contact",
+      link: "/ai-integration",
       color: "from-indigo-500 to-purple-400",
       image: aiService
     }

@@ -78,7 +78,7 @@ ${formData.description}
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] bg-black border border-brand-gray">
+      <DialogContent className="sm:max-w-[600px] w-[92%] rounded-lg max-h-[80vh] md:max-h-[85%] overflow-y-auto bg-white/20 backdrop-blur-sm border border-brand-gray">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-white">Get a Quote</DialogTitle>
         </DialogHeader>

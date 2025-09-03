@@ -23,15 +23,7 @@ import aboutInnovation from "@/assets/about-innovation.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import aboutVision from "@/assets/about-vision.jpg";
 import aboutValues from "@/assets/about-values.jpg";
-import portfolio1 from "@/assets/portfolio-1.jpg";
-import portfolio2 from "@/assets/portfolio-2.jpg";
-import portfolio3 from "@/assets/portfolio-3.jpg";
-import portfolio4 from "@/assets/portfolio-4.jpg";
-import portfolio5 from "@/assets/portfolio-5.jpg";
-import clientDavid from "@/assets/client-david.jpg";
-import clientMaria from "@/assets/client-maria.jpg";
-import clientJames from "@/assets/client-james.jpg";
-import clientLisa from "@/assets/client-lisa.jpg";
+
 
 const About = () => {
   const values = [
@@ -59,74 +51,79 @@ const About = () => {
 
   const testimonials = [
     {
-      name: "David Kim",
-      company: "TechStart Inc.",
-      role: "CEO",
-      content: "Retro Code Labs transformed our digital presence with their unique retro-modern approach. Our website now perfectly captures our brand identity while delivering exceptional performance.",
+      name: "Rajesh Kumar",
+      company: "TechVantage Solutions Pvt Ltd",
+      role: "CEO & Founder",
+      content: "Retro Code Labs completely transformed our digital presence. Their retro-modern approach perfectly captured our brand's unique identity while delivering exceptional performance. The team's attention to detail and technical expertise exceeded our expectations.",
       rating: 5,
-      image: clientDavid
+      image: '/assets/testimonials/1.jpg'
     },
     {
-      name: "Maria Rodriguez",
-      company: "Creative Studios",
+      name: "Priya Desai",
+      company: "Creative Studios India",
       role: "Creative Director",
-      content: "The team's attention to detail and innovative design solutions exceeded our expectations. They delivered a mobile app that our users absolutely love.",
+      content: "Working with Retro Code Labs was an absolute pleasure. They understood our creative vision perfectly and delivered a mobile app that our users absolutely love. Their innovative design solutions and attention to detail are unmatched.",
       rating: 5,
-      image: clientMaria
+      image: '/assets/testimonials/2.jpg'
     },
     {
-      name: "James Wilson",
-      company: "E-commerce Plus",
-      role: "Founder",
-      content: "Working with Retro Code Labs was a game-changer. Their AMP development expertise helped us achieve lightning-fast loading speeds and better search rankings.",
+      name: "Amit Singh",
+      company: "E-commerce Solutions India",
+      role: "Founder & CEO",
+      content: "Retro Code Labs was a game-changer for our business. Their AMP development expertise helped us achieve lightning-fast loading speeds and significantly improved our search rankings. Our conversion rates have increased by 40% since the launch.",
       rating: 5,
-      image: clientJames
+      image: '/assets/testimonials/3.jpg'
     },
     {
-      name: "Lisa Chen",
-      company: "AI Solutions Corp",
-      role: "CTO",
-      content: "Their AI integration capabilities are outstanding. They seamlessly integrated machine learning features into our platform, enhancing user experience significantly.",
+      name: "Deepika Sharma",
+      company: "AI Solutions India Pvt Ltd",
+      role: "Chief Technology Officer",
+      content: "Their AI integration capabilities are outstanding. They seamlessly integrated machine learning features into our platform, enhancing user experience significantly. The team's technical expertise and innovative approach have made us industry leaders.",
       rating: 5,
-      image: clientLisa
+      image: '/assets/testimonials/4.jpg'
     }
   ];
 
   const portfolioItems = [
     {
-      title: "Modern Web Application",
+      title: "5G Homes",
       category: "Web Development",
-      description: "A sleek, responsive web application with retro-futuristic design elements and modern functionality.",
-      image: portfolio1,
-      tags: ["React", "TypeScript", "Tailwind"]
+      description: "High-speed internet service provider website with modern design and seamless user experience.",
+      image: "/assets/portfolio/web-development/5ghomes.webp",
+      tags: ["Web Development", "Responsive", "Performance"],
+      link: "https://5ghighspeedinternet.co"
     },
     {
-      title: "Mobile App Interface",
-      category: "Mobile Development", 
-      description: "Intuitive mobile application with vibrant UI design and seamless user experience.",
-      image: portfolio2,
-      tags: ["React Native", "UI/UX", "Mobile"]
-    },
-    {
-      title: "E-commerce Platform",
+      title: "Cold Creekcap",
       category: "Web Development",
-      description: "Professional e-commerce solution with modern design and optimized performance.",
-      image: portfolio3,
-      tags: ["E-commerce", "AMP", "Performance"]
+      description: "Professional corporate website with modern design and optimized performance.",
+      image: "/assets/portfolio/web-development/cold-creekcap.webp",
+      tags: ["Corporate", "SEO", "Responsive"],
+      link: "https://www.coldcreekcap.com"
     },
     {
-      title: "AI Dashboard",
-      category: "AI Integration",
-      description: "Advanced AI-powered dashboard with data visualization and predictive analytics.",
-      image: portfolio4,
-      tags: ["AI/ML", "Dashboard", "Analytics"]
-    },
-    {
-      title: "Corporate Website",
+      title: "Think Reality",
       category: "Web Development",
-      description: "Professional corporate website with retro-tech styling and modern functionality.",
-      image: portfolio5,
-      tags: ["Corporate", "SEO", "Responsive"]
+      description: "Real estate platform with innovative design and advanced functionality.",
+      image: "/assets/portfolio/web-development/think-reality.webp",
+      tags: ["Real Estate", "Modern UI", "Advanced Features"],
+      link: "https://thinkrealty.ae"
+    },
+    {
+      title: "Akash Mega Mart Mobile App",
+      category: "Mobile Development",
+      description: "E-commerce mobile application with intuitive design and seamless shopping experience.",
+      image: "/assets/portfolio/app-development/akash_mega_mart-app.webp",
+      tags: ["Mobile App", "E-commerce", "React Native"],
+      link: "https://play.google.com/store/apps/details?id=com.app.akash_mega_mart"
+    },
+    {
+      title: "FeelIt Mobile App",
+      category: "Mobile Development",
+      description: "Innovative mobile application with vibrant UI design and engaging user experience.",
+      image: "/assets/portfolio/app-development/feelit_app.webp",
+      tags: ["Mobile App", "UI/UX", "Innovation"],
+      link: "https://play.google.com/store/apps/details?id=com.feelit.feelit_app"
     }
   ];
 
@@ -401,10 +398,17 @@ const About = () => {
                           </span>
                         ))}
                       </div>
-                      <div className="flex items-center text-white group-hover:text-neon-cyan transition-colors duration-300">
-                        <span className="text-sm font-medium">View Project</span>
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                      </div>
+                                             <div className="flex items-center text-white group-hover:text-neon-cyan transition-colors duration-300">
+                         <a 
+                           href={item.link} 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           className="flex items-center"
+                         >
+                           <span className="text-sm font-medium">View Project</span>
+                           <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                         </a>
+                       </div>
                     </CardContent>
                   </Card>
                 </div>

@@ -12,7 +12,8 @@ import {
   CheckCircle,
   Users,
   Trophy,
-  Rocket
+  Rocket,
+  User
 } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.jpg";
 import webPortfolio1 from "@/assets/web-portfolio-1.jpg";
@@ -80,24 +81,24 @@ const Index = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      company: "TechStart Inc",
-      role: "CEO",
-      content: "Retro Code Labs transformed our vision into reality. Their attention to detail and modern approach exceeded our expectations.",
+      name: "Priya Sharma",
+      company: "TechVantage Solutions Pvt Ltd",
+      role: "CEO & Founder",
+      content: "Working with Retro Code Labs was a game-changer for our startup. They understood our vision perfectly and delivered a website that perfectly captures our brand's retro-modern aesthetic. The team's attention to detail and technical expertise exceeded our expectations.",
       rating: 5
     },
     {
-      name: "Mike Chen",
-      company: "Digital Ventures",
-      role: "CTO",
-      content: "The team's expertise in modern web technologies and their retro-inspired design aesthetic is unmatched.",
+      name: "Arjun Patel",
+      company: "Digital Dynamics India",
+      role: "Chief Technology Officer",
+      content: "As a tech company, we needed a partner who could keep up with our fast-paced environment. Retro Code Labs not only delivered cutting-edge solutions but also brought a unique retro-inspired design that sets us apart from competitors. Highly recommended!",
       rating: 5
     },
     {
-      name: "Emily Rodriguez",
-      company: "GrowthCorp",
+      name: "Anjali Reddy",
+      company: "GrowthFirst Technologies",
       role: "Marketing Director",
-      content: "Our AMP website loads incredibly fast and our mobile traffic has increased by 300% since launch.",
+      content: "The AMP website Retro Code Labs built for us has been incredible for our mobile marketing campaigns. Our page load speed improved dramatically, and we've seen a 300% increase in mobile conversions. Their retro-modern approach is truly innovative.",
       rating: 5
     }
   ];
@@ -258,14 +259,19 @@ const Index = () => {
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-neon-cyan text-neon-cyan" />
+                      <Star key={i} className="w-4 h-4 fill-neon-cyan text-neon-cyan" />
                     ))}
                   </div>
                   <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
-                  <div>
-                    <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-sm text-gray-400">{testimonial.role}</div>
-                    <div className="text-sm text-neon-cyan">{testimonial.company}</div>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-gray-300 to-gray-300 rounded-full flex items-center justify-center mr-4">
+                      <User className="w-6 h-6 text-black" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white">{testimonial.name}</div>
+                      <div className="text-sm text-gray-400">{testimonial.role}</div>
+                      <div className="text-sm text-neon-cyan">{testimonial.company}</div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

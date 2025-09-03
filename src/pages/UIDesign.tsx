@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { 
-  Smartphone, 
+  Palette, 
   Rocket, 
   Search, 
-  Code, 
+  Smartphone, 
   Zap, 
   Shield,
   CheckCircle,
@@ -13,118 +13,87 @@ import {
   Globe,
   ShoppingCart,
   Database,
-  Palette,
+  Code,
   BarChart,
   Users,
-  Download,
-  Bell,
-  ExternalLink,
+  Eye,
+  Target,
+  TrendingUp,
   Smartphone as MobileIcon
 } from "lucide-react";
 
-const MobileDevelopment = () => {
+const UIDesign = () => {
   const services = [
     {
-      icon: MobileIcon,
-      title: "Native iOS Development",
-      description: "Custom iOS applications built with Swift and SwiftUI for optimal performance."
+      icon: Palette,
+      title: "UI Design",
+      description: "Beautiful and intuitive user interfaces that enhance user experience."
     },
     {
-      icon: Smartphone,
-      title: "Native Android Development",
-      description: "Android apps developed with Kotlin and Jetpack Compose for modern UI."
+      icon: Eye,
+      title: "UX Research",
+      description: "User research and usability testing to optimize user journeys."
     },
     {
-      icon: Globe,
-      title: "Cross-Platform Development",
-      description: "React Native and Flutter apps that work seamlessly across platforms."
+      icon: Target,
+      title: "Wireframing",
+      description: "Detailed wireframes and prototypes for user testing and validation."
     },
     {
-      icon: ShoppingCart,
-      title: "E-commerce Mobile Apps",
-      description: "Full-featured shopping apps with payment processing and inventory management."
+      icon: Code,
+      title: "Design Systems",
+      description: "Comprehensive design systems for consistent brand experience."
     }
   ];
 
   const process = [
     {
       step: "01",
-      title: "Discovery",
-      description: "Understand your requirements and plan the app architecture and features.",
+      title: "Research",
+      description: "Understand your users, business goals, and market requirements.",
       icon: Search
     },
     {
       step: "02", 
-      title: "Design",
-      description: "Create wireframes and UI/UX designs optimized for mobile experience.",
-      icon: Palette
+      title: "Strategy",
+      description: "Develop design strategy and user experience roadmap.",
+      icon: Target
     },
     {
       step: "03",
-      title: "Development",
-      description: "Build your app using modern mobile development technologies and best practices.",
-      icon: Code
+      title: "Design",
+      description: "Create wireframes, prototypes, and visual designs.",
+      icon: Palette
     },
     {
       step: "04",
-      title: "Testing & Launch",
-      description: "Thorough testing across devices and app store deployment.",
-      icon: Rocket
+      title: "Testing",
+      description: "User testing and iteration for optimal user experience.",
+      icon: Eye
     }
   ];
 
   const features = [
-    "Native performance and smooth animations",
-    "Cross-platform compatibility",
-    "Push notifications and real-time updates",
-    "Offline functionality and data sync",
-    "App store optimization and deployment",
-    "Security and data protection",
-    "Analytics and user behavior tracking",
-    "Regular updates and maintenance"
+    "User-centered design approach",
+    "Responsive and mobile-first design",
+    "Accessibility and usability compliance",
+    "Interactive prototypes and animations",
+    "Design system and component libraries",
+    "User research and testing",
+    "Brand consistency and guidelines",
+    "Performance-optimized designs"
   ];
 
   const technologies = [
-    { name: "React Native", description: "Cross-platform framework for building native mobile apps" },
-    { name: "Flutter", description: "Google's UI toolkit for building natively compiled applications" },
-    { name: "Swift", description: "Modern programming language for iOS development" },
-    { name: "Kotlin", description: "Modern language for Android development" },
-    { name: "Firebase", description: "Backend services for mobile app development" },
-    { name: "Redux", description: "State management for complex mobile applications" }
+    { name: "Figma", description: "Collaborative design tool for UI/UX design" },
+    { name: "Adobe Creative Suite", description: "Professional design software for visual design" },
+    { name: "Sketch", description: "Vector-based design tool for UI design" },
+    { name: "InVision", description: "Prototyping and collaboration platform" },
+    { name: "Principle", description: "Animation and interaction design tool" },
+    { name: "Framer", description: "Advanced prototyping and design tool" }
   ];
 
-  const appPortfolio = [
-    {
-      id: 1,
-      img: '/assets/portfolio/app-development/akash_mega_mart-app.webp',
-      title: "Akash Mega Mart Mobile App",
-      link: "https://play.google.com/store/apps/details?id=com.app.akash_mega_mart",
-    },
-    {
-      id: 2,
-      img: '/assets/portfolio/app-development/feelit_app.webp',
-      title: "FeelIt Mobile App",
-      link: "https://play.google.com/store/apps/details?id=com.feelit.feelit_app",
-    },
-    {
-      id: 3,
-      img: '/assets/portfolio/app-development/klikomics.webp',
-      title: "Klikomics Mobile App",
-      link: "https://play.google.com/store/apps/details?id=com.klikomics.android&pcampaignid=web_share",
-    },
-    {
-      id: 4,
-      img: '/assets/portfolio/app-development/autosnap-app.webp',
-      title: "AutoSnap Mobile App",
-      link: "https://play.google.com/store/apps/details?id=com.Zigna.AutoSnap&pcampaignid=web_share",
-    },
-    {
-      id: 5,
-      img: '/assets/portfolio/app-development/rentop.webp',
-      title: "Rentop Bike and Car",
-      link: "https://play.google.com/store/apps/details?id=com.rentop&pcampaignid=web_share",
-    },
-  ];
+
 
   return (
     <div className="min-h-screen pt-16">
@@ -133,12 +102,12 @@ const MobileDevelopment = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Building <span className="gradient-text">Mobile Apps</span> That Users Love
+              Beautiful <span className="gradient-text">UI/UX Design</span> That Converts
             </h1>
             <p className="text-xl text-gray-300 mb-8 animate-fade-in">
-              We create native and cross-platform mobile applications that deliver 
-              exceptional user experiences. From concept to app store, we handle 
-              every aspect of mobile app development.
+              We create stunning, user-centered designs that not only look amazing 
+              but also provide exceptional user experiences. From wireframes to 
+              final designs, we bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
               <Button 
@@ -146,7 +115,7 @@ const MobileDevelopment = () => {
                 className="bg-gradient-to-r from-neon-cyan to-neon-pink text-black font-semibold hover:from-neon-pink hover:to-neon-cyan transition-all duration-300"
                 asChild
               >
-                <Link to="/contact">Start Your App Project</Link>
+                <Link to="/contact">Start Your Design Project</Link>
               </Button>
             </div>
           </div>
@@ -161,7 +130,7 @@ const MobileDevelopment = () => {
               What We <span className="gradient-text">Offer</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Comprehensive mobile app development services for iOS and Android platforms.
+              Comprehensive UI/UX design services to create exceptional user experiences.
             </p>
           </div>
 
@@ -186,11 +155,11 @@ const MobileDevelopment = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="gradient-text">Development Process</span>
+              Our <span className="gradient-text">Design Process</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              A proven methodology that ensures your mobile app is delivered on time, 
-              on budget, and exceeds user expectations.
+              A proven methodology that ensures your designs are user-centered, 
+              beautiful, and deliver exceptional user experience.
             </p>
           </div>
 
@@ -217,7 +186,7 @@ const MobileDevelopment = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Why Choose Us for Your <span className="gradient-text">Mobile App</span>?
+                Why Choose Us for <span className="gradient-text">UI/UX Design</span>?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {features.map((feature, index) => (
@@ -242,24 +211,24 @@ const MobileDevelopment = () => {
                 <CardContent className="p-8">
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
-                      <Download className="w-12 h-12 text-neon-cyan mx-auto mb-3" />
-                      <div className="text-2xl font-bold text-white">50K+</div>
-                      <div className="text-gray-400">App Downloads</div>
+                      <Palette className="w-12 h-12 text-neon-cyan mx-auto mb-3" />
+                      <div className="text-2xl font-bold text-white">100+</div>
+                      <div className="text-gray-400">Designs Created</div>
                     </div>
                     <div>
-                      <Bell className="w-12 h-12 text-neon-pink mx-auto mb-3" />
+                      <Eye className="w-12 h-12 text-neon-pink mx-auto mb-3" />
                       <div className="text-2xl font-bold text-white">95%</div>
-                      <div className="text-gray-400">User Rating</div>
+                      <div className="text-gray-400">User Satisfaction</div>
                     </div>
                     <div>
-                      <Smartphone className="w-12 h-12 text-neon-cyan mx-auto mb-3" />
-                      <div className="text-2xl font-bold text-white">100%</div>
-                      <div className="text-gray-400">Platform Coverage</div>
+                      <Target className="w-12 h-12 text-neon-cyan mx-auto mb-3" />
+                      <div className="text-2xl font-bold text-white">150%</div>
+                      <div className="text-gray-400">Conversion Boost</div>
                     </div>
                     <div>
                       <Users className="w-12 h-12 text-neon-pink mx-auto mb-3" />
-                      <div className="text-2xl font-bold text-white">25+</div>
-                      <div className="text-gray-400">Apps Delivered</div>
+                      <div className="text-2xl font-bold text-white">30+</div>
+                      <div className="text-gray-400">Happy Clients</div>
                     </div>
                   </div>
                 </CardContent>
@@ -274,11 +243,11 @@ const MobileDevelopment = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="gradient-text">Tech Stack</span>
+              Our <span className="gradient-text">Design Tools</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              We use modern, proven technologies to build mobile apps that are fast, 
-              secure, and scalable.
+              We use industry-leading design tools and technologies to create 
+              exceptional user experiences and beautiful interfaces.
             </p>
           </div>
 
@@ -295,57 +264,17 @@ const MobileDevelopment = () => {
         </div>
       </section>
 
-      {/* Portfolio Showcase */}
-      <section className="section-padding bg-retro-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="gradient-text">Portfolio</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Explore our recent mobile app development projects that showcase our expertise and creativity.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {appPortfolio.map((project, index) => (
-              <Card key={index} className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300 group animate-fade-in">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.img} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">{project.title}</h3>
-                  <div className="flex items-center text-white group-hover:text-neon-cyan transition-colors duration-300">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center"
-                    >
-                      <span className="text-sm font-medium">View Project</span>
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-neon-cyan/10 to-neon-pink/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Launch Your <span className="gradient-text">Mobile App</span>?
+            Ready to <span className="gradient-text">Transform</span> Your Design?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Let's create a mobile app that not only looks amazing but also drives real results 
-            for your business. Get in touch today for a free consultation.
+            Let's create beautiful, user-centered designs that not only look amazing but also 
+            drive real results for your business. Get in touch today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -354,7 +283,7 @@ const MobileDevelopment = () => {
               asChild
             >
               <Link to="/contact">
-                Start Your App Project <ArrowRight className="ml-2 w-5 h-5" />
+                Start Your Design Project <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
             <Button 
@@ -372,4 +301,4 @@ const MobileDevelopment = () => {
   );
 };
 
-export default MobileDevelopment;
+export default UIDesign;

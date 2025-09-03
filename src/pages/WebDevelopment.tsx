@@ -16,7 +16,8 @@ import {
   Database,
   Palette,
   BarChart,
-  Users
+  Users,
+  ExternalLink
 } from "lucide-react";
 
 const WebDevelopment = () => {
@@ -90,28 +91,37 @@ const WebDevelopment = () => {
     { name: "MongoDB", description: "NoSQL database for flexible data storage" }
   ];
 
-  const caseStudies = [
+  const webPortfolio = [
     {
-      title: "E-commerce Platform",
-      client: "Fashion Retailer",
-      description: "Increased online sales by 150% with a modern, fast-loading e-commerce platform.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
-      results: ["150% increase in sales", "60% faster page load", "Mobile conversion up 200%"]
+      id: 1,
+      img: '/assets/portfolio/web-development/5ghomes.webp',
+      title: "5G Homes",
+      link: "https://5ghighspeedinternet.co",
     },
     {
-      title: "Corporate Website",
-      client: "Tech Startup",
-      description: "Professional corporate presence that helped secure $2M in Series A funding.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      results: ["Professional brand image", "Improved investor confidence", "25% increase in leads"]
+      id: 2,
+      img: '/assets/portfolio/web-development/cold-creekcap.webp',
+      title: "Cold Creekcap",
+      link: "https://www.coldcreekcap.com",
     },
     {
-      title: "Portfolio Website",
-      client: "Creative Agency",
-      description: "Stunning portfolio showcase that increased client inquiries by 300%.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80",
-      results: ["300% more inquiries", "Award-winning design", "Perfect mobile experience"]
-    }
+      id: 3,
+      img: '/assets/portfolio/web-development/think-reality.webp',
+      title: "Think Reality",
+      link: "https://thinkrealty.ae",
+    },
+    {
+      id: 4,
+      img: '/assets/portfolio/web-development/akash-mega-mart.webp',
+      title: "Akash Mega Mart",
+      link: "https://akashmegamart.com/",
+    },
+    {
+      id: 5,
+      img: '/assets/portfolio/web-development/midwam.webp',
+      title: "Midwam – Immersive Experience Design Company",
+      link: "https://www.midwam.com/en/about",
+    },
   ];
 
   return (
@@ -136,13 +146,13 @@ const WebDevelopment = () => {
               >
                 <Link to="/contact">Start Your Website Project</Link>
               </Button>
-              <Button 
+              {/* <Button 
                 size="lg"
                 variant="outline"
                 className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300"
               >
                 View Portfolio
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -290,40 +300,41 @@ const WebDevelopment = () => {
         </div>
       </section>
 
-      {/* Case Studies */}
+      {/* Portfolio Showcase */}
       <section className="section-padding bg-retro-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Success <span className="gradient-text">Stories</span>
+              Our <span className="gradient-text">Portfolio</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              See how we've helped businesses achieve their goals with our web development services.
+              Explore our recent web development projects that showcase our expertise and creativity.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
+            {webPortfolio.map((project, index) => (
               <Card key={index} className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300 group animate-fade-in">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src={study.image} 
-                    alt={study.title}
+                    src={project.img} 
+                    alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
-                  <p className="text-neon-cyan text-sm mb-3">{study.client}</p>
-                  <p className="text-gray-400 mb-4">{study.description}</p>
-                  <ul className="space-y-1">
-                    {study.results.map((result, resultIndex) => (
-                      <li key={resultIndex} className="flex items-center text-sm text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-neon-cyan mr-2 flex-shrink-0" />
-                        {result}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-xl font-semibold text-white mb-4">{project.title}</h3>
+                  <div className="flex items-center text-white group-hover:text-neon-cyan transition-colors duration-300">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center"
+                    >
+                      <span className="text-sm font-medium">View Project</span>
+                      <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             ))}

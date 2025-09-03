@@ -14,6 +14,7 @@ import WebDevelopment from "./pages/WebDevelopment";
 import AMPDevelopment from "./pages/AMPDevelopment";
 import MobileDevelopment from "./pages/MobileDevelopment";
 import AIIntegration from "./pages/AIIntegration";
+import UIDesign from "./pages/UIDesign";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/web-development" element={<WebDevelopment />} />
             <Route path="/mobile-development" element={<MobileDevelopment />} />
             <Route path="/ai-integration" element={<AIIntegration />} />
+            <Route path="/ui-design" element={<UIDesign />} />
             <Route path="/amp-development" element={<AMPDevelopment />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

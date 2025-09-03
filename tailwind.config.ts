@@ -70,7 +70,15 @@ export default {
 				'brand-orange': '#FF5722',
 				'brand-red': '#D84315',
 				'brand-dark': '#0D0D0D',
-				'brand-gray': '#1A1A1A'
+				'brand-gray': '#1A1A1A',
+				// Retro theme colors
+				'retro-dark': '#0A0A0A',
+				'retro-gray': '#1E1E1E',
+				'retro-blue': '#0F1419',
+				'retro-darker': '#050505',
+				'retro-border': '#2A2A2A',
+				'neon-cyan': '#FF8C42',
+				'neon-pink': '#FF6B35'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

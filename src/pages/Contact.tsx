@@ -1,15 +1,20 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   Send,
   Clock,
   MessageSquare,
@@ -19,7 +24,7 @@ import {
   Instagram,
   Star,
   Users,
-  Award
+  Award,
 } from "lucide-react";
 import contactHero from "@/assets/contact-hero.jpg";
 import contactOffice from "@/assets/contact-office.jpg";
@@ -32,12 +37,12 @@ const Contact = () => {
     email: "",
     phone: "",
     projectType: "",
-    message: ""
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic form validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -53,23 +58,26 @@ const Contact = () => {
     const body = `
 Name: ${formData.name}
 Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
-Project Type: ${formData.projectType || 'Not specified'}
+Phone: ${formData.phone || "Not provided"}
+Project Type: ${formData.projectType || "Not specified"}
 
 Message:
 ${formData.message}
     `;
 
     // Create mailto link
-    const mailtoLink = `mailto:Contact@retrocodelabs.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
+    const mailtoLink = `mailto:Contact@retrocodelabs.in?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
     // Open email client
     window.location.href = mailtoLink;
 
     // Show success message
     toast({
       title: "Message Prepared!",
-      description: "Your email client should open with the message ready to send.",
+      description:
+        "Your email client should open with the message ready to send.",
     });
 
     // Reset form
@@ -78,14 +86,14 @@ ${formData.message}
       email: "",
       phone: "",
       projectType: "",
-      message: ""
+      message: "",
     });
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
   };
 
@@ -94,40 +102,40 @@ ${formData.message}
       icon: Mail,
       title: "Email",
       value: "Contact@retrocodelabs.in",
-      description: "Send us an email anytime"
+      description: "Send us an email anytime",
     },
     {
       icon: Phone,
       title: "Phone",
       value: "+91 8309836039",
-      description: "Mon-Fri from 9am to 6pm"
+      description: "Mon-Fri from 9am to 6pm",
     },
     {
       icon: MapPin,
       title: "Office",
-      value: "San Francisco, CA",
-      description: "123 Tech Street, Suite 100"
+      value: "Office number 309, Ambadeep building- 3rd floor, Kg marg Connaught Place, Delhi",
+      description: "India",
     },
     {
       icon: Clock,
       title: "Response Time",
       value: "Within 24 hours",
-      description: "We respond to all inquiries quickly"
-    }
+      description: "We respond to all inquiries quickly",
+    },
   ];
 
   const socialLinks = [
     { icon: Facebook, name: "Facebook", href: "#" },
     { icon: Twitter, name: "Twitter", href: "#" },
     { icon: Linkedin, name: "LinkedIn", href: "#" },
-    { icon: Instagram, name: "Instagram", href: "#" }
+    { icon: Instagram, name: "Instagram", href: "#" },
   ];
 
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="relative section-padding overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${contactHero})` }}
         >
@@ -139,8 +147,8 @@ ${formData.message}
               Get In <span className="gradient-text">Touch</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 animate-fade-in">
-              Ready to start your project? We'd love to hear from you. 
-              Send us a message and we'll respond as soon as possible.
+              Ready to start your project? We'd love to hear from you. Send us a
+              message and we'll respond as soon as possible.
             </p>
           </div>
         </div>
@@ -156,9 +164,11 @@ ${formData.message}
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
                     <MessageSquare className="w-6 h-6 text-brand-orange mr-3" />
-                    <h2 className="text-2xl font-bold text-white">Send Us a Message</h2>
+                    <h2 className="text-2xl font-bold text-white">
+                      Send Us a Message
+                    </h2>
                   </div>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
@@ -167,7 +177,9 @@ ${formData.message}
                         </label>
                         <Input
                           value={formData.name}
-                          onChange={(e) => handleInputChange("name", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("name", e.target.value)
+                          }
                           placeholder="Your full name"
                           className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
                         />
@@ -179,7 +191,9 @@ ${formData.message}
                         <Input
                           type="email"
                           value={formData.email}
-                          onChange={(e) => handleInputChange("email", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("email", e.target.value)
+                          }
                           placeholder="your@email.com"
                           className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
                         />
@@ -193,7 +207,9 @@ ${formData.message}
                         </label>
                         <Input
                           value={formData.phone}
-                          onChange={(e) => handleInputChange("phone", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("phone", e.target.value)
+                          }
                           placeholder="+91 8309836039"
                           className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
                         />
@@ -202,12 +218,18 @@ ${formData.message}
                         <label className="block text-sm font-medium text-gray-300 mb-2">
                           Project Type
                         </label>
-                        <Select onValueChange={(value) => handleInputChange("projectType", value)}>
+                        <Select
+                          onValueChange={(value) =>
+                            handleInputChange("projectType", value)
+                          }
+                        >
                           <SelectTrigger className="bg-retro-dark border-retro-dark text-white focus:border-brand-orange">
                             <SelectValue placeholder="Select project type" />
                           </SelectTrigger>
                           <SelectContent className="bg-retro-dark border-retro-gray">
-                            <SelectItem value="website">Website Development</SelectItem>
+                            <SelectItem value="website">
+                              Website Development
+                            </SelectItem>
                             <SelectItem value="mobile">Mobile App</SelectItem>
                             <SelectItem value="amp">AMP Development</SelectItem>
                             <SelectItem value="api">Custom API</SelectItem>
@@ -225,14 +247,16 @@ ${formData.message}
                       </label>
                       <Textarea
                         value={formData.message}
-                        onChange={(e) => handleInputChange("message", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("message", e.target.value)
+                        }
                         placeholder="Tell us about your project..."
                         rows={6}
                         className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange resize-none"
                       />
                     </div>
 
-                    <Button 
+                    <Button
                       type="submit"
                       variant="orange"
                       size="lg"
@@ -248,19 +272,30 @@ ${formData.message}
             {/* Contact Information */}
             <div className="space-y-8 animate-fade-in">
               <div>
-                <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Contact Information
+                </h2>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
-                    <Card key={index} className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300">
+                    <Card
+                      key={index}
+                      className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300"
+                    >
                       <CardContent className="p-6">
                         <div className="flex items-start space-x-4">
                           <div className="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center flex-shrink-0">
                             <info.icon className="w-6 h-6 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
-                            <p className="text-brand-orange font-medium mb-1">{info.value}</p>
-                            <p className="text-gray-400 text-sm">{info.description}</p>
+                            <h3 className="text-lg font-semibold text-white mb-1">
+                              {info.title}
+                            </h3>
+                            <p className="text-brand-orange font-medium mb-1">
+                              {info.value}
+                            </p>
+                            <p className="text-gray-400 text-sm">
+                              {info.description}
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -272,7 +307,7 @@ ${formData.message}
               {/* Social Media */}
               <div>
                 <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap gap-4">
                   {socialLinks.map((social, index) => (
                     <Button
                       key={index}
@@ -281,7 +316,10 @@ ${formData.message}
                       className="border-brand-orange hover:border-brand-red hover:bg-brand-orange/10 transition-all duration-300"
                       asChild
                     >
-                      <a href={social.href} className="flex items-center space-x-2">
+                      <a
+                        href={social.href}
+                        className="flex items-center space-x-2"
+                      >
                         <social.icon className="w-5 h-5" />
                         <span className="hidden sm:inline">{social.name}</span>
                       </a>
@@ -289,12 +327,10 @@ ${formData.message}
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </section>
-
 
       {/* Team & Support Section */}
       <section className="section-padding bg-retro-dark">
@@ -305,16 +341,16 @@ ${formData.message}
                 Meet Our <span className="gradient-text">Team</span>
               </h2>
               <p className="text-xl text-gray-300 mb-6">
-                Our experienced team of developers, designers, and project managers 
-                are dedicated to bringing your vision to life with cutting-edge technology 
-                and innovative solutions.
+                Our experienced team of developers, designers, and project
+                managers are dedicated to bringing your vision to life with
+                cutting-edge technology and innovative solutions.
               </p>
               <div className="space-y-4">
                 {[
                   "Expert developers with 5+ years experience",
                   "Dedicated project managers for seamless communication",
                   "Creative designers with modern aesthetic vision",
-                  "24/7 support team for ongoing assistance"
+                  "24/7 support team for ongoing assistance",
                 ].map((point, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-brand-orange rounded-full mr-4"></div>
@@ -324,7 +360,7 @@ ${formData.message}
               </div>
             </div>
             <div className="animate-fade-in">
-              <img 
+              <img
                 src={contactTeam}
                 alt="Our development team"
                 className="rounded-lg shadow-2xl border border-brand-orange"
@@ -334,7 +370,7 @@ ${formData.message}
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 animate-fade-in">
-              <img 
+              <img
                 src={contactSupport}
                 alt="Customer support"
                 className="rounded-lg shadow-2xl border border-brand-orange"
@@ -345,15 +381,16 @@ ${formData.message}
                 World-Class <span className="gradient-text">Support</span>
               </h2>
               <p className="text-xl text-gray-300 mb-6">
-                We believe in providing exceptional support throughout your project 
-                and beyond. Our dedicated support team ensures your success at every step.
+                We believe in providing exceptional support throughout your
+                project and beyond. Our dedicated support team ensures your
+                success at every step.
               </p>
               <div className="space-y-4">
                 {[
                   "Rapid response within 24 hours",
                   "Dedicated account manager for each project",
                   "Comprehensive project documentation",
-                  "Post-launch monitoring and maintenance"
+                  "Post-launch monitoring and maintenance",
                 ].map((point, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-brand-orange rounded-full mr-4"></div>
@@ -382,24 +419,33 @@ ${formData.message}
             {[
               {
                 question: "How long does a typical project take?",
-                answer: "Project timelines vary depending on complexity. A simple website typically takes 2-4 weeks, while complex applications can take 8-16 weeks. We'll provide a detailed timeline during our initial consultation."
+                answer:
+                  "Project timelines vary depending on complexity. A simple website typically takes 2-4 weeks, while complex applications can take 8-16 weeks. We'll provide a detailed timeline during our initial consultation.",
               },
               {
                 question: "Do you provide ongoing support and maintenance?",
-                answer: "Yes! We offer various support packages including bug fixes, updates, security monitoring, and feature enhancements. We believe in long-term partnerships with our clients."
+                answer:
+                  "Yes! We offer various support packages including bug fixes, updates, security monitoring, and feature enhancements. We believe in long-term partnerships with our clients.",
               },
               {
                 question: "What technologies do you work with?",
-                answer: "We specialize in modern web technologies including React, Next.js, Node.js, Python, React Native, and various cloud platforms. We always choose the best technology stack for your specific needs."
+                answer:
+                  "We specialize in modern web technologies including React, Next.js, Node.js, Python, React Native, and various cloud platforms. We always choose the best technology stack for your specific needs.",
               },
               {
                 question: "Can you help with existing projects?",
-                answer: "Absolutely! We can audit, improve, or completely rebuild existing applications. We also offer consulting services to help optimize your current digital solutions."
-              }
+                answer:
+                  "Absolutely! We can audit, improve, or completely rebuild existing applications. We also offer consulting services to help optimize your current digital solutions.",
+              },
             ].map((faq, index) => (
-              <Card key={index} className="bg-retro-dark border-brand-orange hover:border-brand-red transition-all duration-300 animate-fade-in">
+              <Card
+                key={index}
+                className="bg-retro-dark border-brand-orange hover:border-brand-red transition-all duration-300 animate-fade-in"
+              >
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
+                  <h3 className="text-lg font-semibold text-white mb-3">
+                    {faq.question}
+                  </h3>
                   <p className="text-gray-400">{faq.answer}</p>
                 </CardContent>
               </Card>
