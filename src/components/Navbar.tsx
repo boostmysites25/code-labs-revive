@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav>
       {/* Contact Info Bar */}
-      <div className="fixed top-0 left-0 w-full bg-brand-orange/10 border-b border-brand-orange/20 z-50">
+      {/* <div className="fixed top-0 left-0 w-full bg-brand-orange/10 border-b border-brand-orange/20 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-2 text-sm">
             <div className="flex items-center space-x-6">
@@ -48,11 +48,11 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navbar */}
         <div 
-          className="fixed top-8 left-0 w-full h-16 z-50 backdrop-blur-md bg-black/90 border-b border-brand-gray transition-all duration-300"
+          className="fixed top-0 left-0 w-full h-16 z-50 backdrop-blur-md bg-black/90 border-b border-brand-gray transition-all duration-300"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
