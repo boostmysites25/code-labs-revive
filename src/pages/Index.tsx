@@ -175,12 +175,65 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></div>
-          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-brand-orange rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-neon-pink rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+        {/* Animated Sparkles and Stars Background */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          {/* Moving Stars */}
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`
+              }}
+            >
+              <div className="relative">
+                <div 
+                  className={`w-1 h-1 bg-white rounded-full ${
+                    i % 3 === 0 ? 'bg-neon-cyan' : 
+                    i % 3 === 1 ? 'bg-brand-orange' : 
+                    'bg-neon-pink'
+                  }`}
+                />
+                {/* Star sparkle effect */}
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '4s' }}>
+                  <div className="absolute -top-1 left-1/2 w-0.5 h-2 bg-current transform -translate-x-1/2 opacity-60" />
+                  <div className="absolute top-1/2 -left-1 w-2 h-0.5 bg-current transform -translate-y-1/2 opacity-60" />
+                </div>
+              </div>
+            </div>
+          ))}
+          
+          {/* Floating Sparkles */}
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={`sparkle-${i}`}
+              className="absolute animate-bounce"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            >
+              <div 
+                className={`w-0.5 h-0.5 rounded-full ${
+                  i % 4 === 0 ? 'bg-neon-cyan' : 
+                  i % 4 === 1 ? 'bg-brand-orange' : 
+                  i % 4 === 2 ? 'bg-neon-pink' :
+                  'bg-white'
+                }`}
+                style={{
+                  boxShadow: '0 0 6px currentColor',
+                }}
+              />
+            </div>
+          ))}
+          
+          {/* Gradient Background */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
         </div>
       </section>
 
