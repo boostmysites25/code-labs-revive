@@ -7,6 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Calendar, User, ArrowRight } from "lucide-react";
 import SmoothScrollAnimation from "@/components/SmoothScrollAnimation";
 
+// Import images
+import aiIntegrationImg from "@/assets/ai-integration-service.jpg";
+import mobileDevImg from "@/assets/mobile-development-service.jpg";
+import webDevImg from "@/assets/web-development-service.jpg";
+import apiDevImg from "@/assets/api-development-service.jpg";
+import uiuxImg from "@/assets/uiux-design-service.jpg";
+import aboutInnovationImg from "@/assets/about-innovation.jpg";
+
 // Blog data inspired by Veltris insights
 const blogPosts = [
   {
@@ -17,7 +25,7 @@ const blogPosts = [
     date: "2024-03-15",
     category: "Healthcare & Lifesciences",
     type: "Blog",
-    image: "/assets/services/AI Analytics Dashboard.webp",
+    image: aiIntegrationImg,
     slug: "digital-transformation-healthcare-guide"
   },
   {
@@ -28,7 +36,7 @@ const blogPosts = [
     date: "2024-03-12",
     category: "Financial Services",
     type: "Whitepaper",
-    image: "/assets/services/Mobile Banking App.webp",
+    image: mobileDevImg,
     slug: "ai-integration-financial-services"
   },
   {
@@ -39,7 +47,7 @@ const blogPosts = [
     date: "2024-03-10",
     category: "Technology & Media",
     type: "Case Study",
-    image: "/assets/services/E-Commerce Platform.webp",
+    image: "/src/assets/web-development-service.jpg",
     slug: "ecommerce-modernization-case-study"
   },
   {
@@ -50,7 +58,7 @@ const blogPosts = [
     date: "2024-03-08",
     category: "Cloud Engineering",
     type: "Guide",
-    image: "/assets/services/Corporate Website.webp",
+    image: apiDevImg,
     slug: "cloud-migration-strategies"
   },
   {
@@ -61,7 +69,7 @@ const blogPosts = [
     date: "2024-03-05",
     category: "UI/UX Design",
     type: "Blog",
-    image: "/assets/services/E-Commerce Mobile App.webp",
+    image: uiuxImg,
     slug: "mobile-first-design-future"
   },
   {
@@ -72,7 +80,7 @@ const blogPosts = [
     date: "2024-03-01",
     category: "Security",
     type: "Whitepaper",
-    image: "/assets/about-innovation.jpg",
+    image: aboutInnovationImg,
     slug: "cybersecurity-framework-guide"
   }
 ];
