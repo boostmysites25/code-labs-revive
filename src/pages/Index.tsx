@@ -106,134 +106,113 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-retro-dark overflow-hidden">
-        {/* Floating Tooltips */}
-        <div className="absolute top-20 left-10 md:left-20 animate-fade-in opacity-90">
-          <div className="bg-gradient-to-r from-brand-orange to-brand-red text-white p-4 rounded-lg shadow-lg max-w-xs relative">
-            <p className="text-sm font-medium">"We need an AI-powered mobile app that can handle real-time data processing"</p>
-            <div className="absolute -bottom-2 left-6 w-4 h-4 bg-gradient-to-r from-brand-orange to-brand-red transform rotate-45"></div>
+      <section className="relative pt-32 pb-32 section-padding bg-brand-dark overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={heroBanner} 
+            alt="Modern tech workspace with coding and development setup"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark/95 to-brand-dark/90"></div>
+          
+          {/* Futuristic Grid Overlay */}
+          <div className="absolute inset-0 opacity-30">
+            <div 
+              className="w-full h-full"
+              style={{
+                backgroundImage: `
+                  linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px)
+                `,
+                backgroundSize: '50px 50px',
+                animation: 'pulse 4s ease-in-out infinite'
+              }}
+            />
           </div>
         </div>
 
-        <div className="absolute top-32 right-10 md:right-20 animate-fade-in opacity-90" style={{ animationDelay: '0.5s' }}>
-          <div className="bg-gradient-to-r from-neon-cyan to-neon-pink text-black p-4 rounded-lg shadow-lg max-w-xs relative">
-            <p className="text-sm font-medium">"Can you build a modern e-commerce platform with seamless UX in 2 weeks?"</p>
-            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-gradient-to-r from-neon-cyan to-neon-pink transform rotate-45"></div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-40 left-16 md:left-32 animate-fade-in opacity-90" style={{ animationDelay: '1s' }}>
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-lg shadow-lg max-w-xs relative">
-            <p className="text-sm font-medium">"Our startup needs a scalable web app with AI integrations and modern design"</p>
-            <div className="absolute -bottom-2 left-8 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 transform rotate-45"></div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-32 right-16 md:right-32 animate-fade-in opacity-90" style={{ animationDelay: '1.5s' }}>
-          <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white p-4 rounded-lg shadow-lg max-w-xs relative">
-            <p className="text-sm font-medium">"How quickly can you develop a custom CRM with analytics dashboard?"</p>
-            <div className="absolute -bottom-2 right-8 w-4 h-4 bg-gradient-to-r from-green-500 to-blue-500 transform rotate-45"></div>
-          </div>
-        </div>
-
-        {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-5xl mx-auto">
-            <div className="mb-6 animate-fade-in">
-              <span className="text-lg font-medium text-neon-cyan tracking-wider uppercase">Digital Innovation Studio</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 animate-fade-in leading-tight">
-              We Develop{" "}
-              <span className="block gradient-text">
-                Retro-Modern Apps
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 animate-fade-in max-w-3xl mx-auto leading-relaxed">
-              We create cutting-edge digital solutions that blend nostalgic aesthetics 
-              with modern functionality and AI-powered features.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300 px-8 py-4 text-lg shadow-2xl hover:shadow-brand-orange/25 hover:scale-105"
-                asChild
-              >
-                <Link to="/contact">Book a Call</Link>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-8 py-4 text-lg hover:scale-105"
-                asChild
-              >
-                <Link to="/services">All Projects</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Animated Sparkles and Stars Background */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          {/* Moving Stars */}
-          {[...Array(15)].map((_, i) => (
+        {/* Animated Sparkles and Floating Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Floating Sparkles */}
+          {[...Array(25)].map((_, i) => (
             <div
-              key={i}
+              key={`sparkle-${i}`}
               className="absolute animate-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`
-              }}
-            >
-              <div className="relative">
-                <div 
-                  className={`w-1 h-1 bg-white rounded-full ${
-                    i % 3 === 0 ? 'bg-neon-cyan' : 
-                    i % 3 === 1 ? 'bg-brand-orange' : 
-                    'bg-neon-pink'
-                  }`}
-                />
-                {/* Star sparkle effect */}
-                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '4s' }}>
-                  <div className="absolute -top-1 left-1/2 w-0.5 h-2 bg-current transform -translate-x-1/2 opacity-60" />
-                  <div className="absolute top-1/2 -left-1 w-2 h-0.5 bg-current transform -translate-y-1/2 opacity-60" />
-                </div>
-              </div>
-            </div>
-          ))}
-          
-          {/* Floating Sparkles */}
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={`sparkle-${i}`}
-              className="absolute animate-bounce"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
+                animationDuration: `${2 + Math.random() * 3}s`
               }}
             >
               <div 
-                className={`w-0.5 h-0.5 rounded-full ${
-                  i % 4 === 0 ? 'bg-neon-cyan' : 
-                  i % 4 === 1 ? 'bg-brand-orange' : 
-                  i % 4 === 2 ? 'bg-neon-pink' :
-                  'bg-white'
+                className={`w-1 h-1 rounded-full ${
+                  i % 4 === 0 ? 'bg-neon-cyan shadow-[0_0_10px_#00ffff]' : 
+                  i % 4 === 1 ? 'bg-brand-orange shadow-[0_0_10px_#ff6b35]' : 
+                  i % 4 === 2 ? 'bg-neon-pink shadow-[0_0_10px_#ff007f]' :
+                  'bg-white shadow-[0_0_8px_#ffffff]'
                 }`}
-                style={{
-                  boxShadow: '0 0 6px currentColor',
-                }}
               />
             </div>
           ))}
-          
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+
+          {/* Moving Light Orbs */}
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={`orb-${i}`}
+              className="absolute rounded-full opacity-40 animate-bounce"
+              style={{
+                left: `${20 + Math.random() * 60}%`,
+                top: `${20 + Math.random() * 60}%`,
+                width: `${4 + Math.random() * 8}px`,
+                height: `${4 + Math.random() * 8}px`,
+                background: `radial-gradient(circle, ${
+                  i % 3 === 0 ? '#00ffff' : 
+                  i % 3 === 1 ? '#ff6b35' : 
+                  '#ff007f'
+                } 0%, transparent 70%)`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${4 + Math.random() * 2}s`
+              }}
+            />
+          ))}
+
+          {/* Diagonal Light Streaks */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent transform -rotate-12 animate-pulse" />
+            <div className="absolute top-2/3 right-0 w-full h-0.5 bg-gradient-to-r from-transparent via-brand-orange/50 to-transparent transform rotate-12 animate-pulse" style={{ animationDelay: '2s' }} />
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in text-white leading-tight">
+              Bringing <span className="gradient-text glow-text">Retro Vibes</span> to{" "}
+              <span className="gradient-text glow-text">Modern Tech</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in leading-relaxed">
+              We create cutting-edge digital solutions that blend nostalgic aesthetics 
+              with modern functionality. From web development to AI integrations, 
+              we're your partners in digital transformation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300 shadow-2xl hover:shadow-brand-orange/50 hover:scale-105 border border-brand-orange/30"
+                asChild
+              >
+                <Link to="/contact">Start Your Project</Link>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300 shadow-xl hover:shadow-neon-cyan/30 hover:scale-105"
+                asChild
+              >
+                <Link to="/services">View Services</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
