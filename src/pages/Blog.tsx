@@ -15,8 +15,9 @@ import apiDevImg from "@/assets/api-development-service.jpg";
 import uiuxImg from "@/assets/uiux-design-service.jpg";
 import aboutInnovationImg from "@/assets/about-innovation.jpg";
 
-// Blog data inspired by Veltris insights
+// Comprehensive blog data with professional insights
 const blogPosts = [
+  // Blogs
   {
     id: 1,
     title: "Digital Transformation in Healthcare: A Complete Guide",
@@ -30,36 +31,36 @@ const blogPosts = [
   },
   {
     id: 2,
-    title: "AI Integration Best Practices for Financial Services",
-    excerpt: "Learn how artificial intelligence is transforming risk assessment, fraud detection, and customer service in the financial sector.",
-    author: "Michael Rodriguez",
-    date: "2024-03-12",
-    category: "Financial Services",
-    type: "Whitepaper",
-    image: mobileDevImg,
-    slug: "ai-integration-financial-services"
+    title: "The Future of Artificial Intelligence in Enterprise",
+    excerpt: "Discover emerging AI trends, implementation strategies, and the transformative impact on business operations across industries.",
+    author: "Dr. Michael Rodriguez",
+    date: "2024-03-18",
+    category: "Technology & Innovation",
+    type: "Blog",
+    image: aiIntegrationImg,
+    slug: "future-ai-enterprise"
   },
   {
     id: 3,
-    title: "E-Commerce Platform Modernization: Case Study",
-    excerpt: "How we helped a retail giant increase their online sales by 300% through comprehensive digital platform transformation.",
-    author: "Emma Thompson",
-    date: "2024-03-10",
-    category: "Technology & Media",
-    type: "Case Study",
-    image: "/src/assets/web-development-service.jpg",
-    slug: "ecommerce-modernization-case-study"
+    title: "DevOps Best Practices for Scalable Applications",
+    excerpt: "Learn how to implement DevOps methodologies that enable continuous integration, delivery, and improved collaboration.",
+    author: "Jennifer Park",
+    date: "2024-03-20",
+    category: "Cloud Engineering",
+    type: "Blog",
+    image: webDevImg,
+    slug: "devops-best-practices-scalable"
   },
   {
     id: 4,
-    title: "Cloud Migration Strategies for Enterprise Applications",
-    excerpt: "A comprehensive guide to migrating legacy systems to cloud infrastructure while maintaining security and performance.",
-    author: "David Kim",
-    date: "2024-03-08",
-    category: "Cloud Engineering",
-    type: "Guide",
+    title: "Blockchain Technology: Beyond Cryptocurrency",
+    excerpt: "Exploring real-world blockchain applications in supply chain, healthcare, and digital identity management.",
+    author: "Robert Chen",
+    date: "2024-03-22",
+    category: "Blockchain & Web3",
+    type: "Blog",
     image: apiDevImg,
-    slug: "cloud-migration-strategies"
+    slug: "blockchain-beyond-cryptocurrency"
   },
   {
     id: 5,
@@ -72,27 +73,171 @@ const blogPosts = [
     image: uiuxImg,
     slug: "mobile-first-design-future"
   },
+  
+  // Whitepapers
   {
     id: 6,
+    title: "AI Integration Best Practices for Financial Services",
+    excerpt: "Comprehensive analysis of artificial intelligence implementation in banking, insurance, and fintech sectors.",
+    author: "Michael Rodriguez",
+    date: "2024-03-12",
+    category: "Financial Services",
+    type: "Whitepaper",
+    image: mobileDevImg,
+    slug: "ai-integration-financial-services"
+  },
+  {
+    id: 7,
     title: "Cybersecurity Framework Implementation Guide",
-    excerpt: "Essential steps to protect your organization from cyber threats with comprehensive security framework implementation.",
+    excerpt: "Essential strategies for protecting organizational assets with comprehensive security framework deployment.",
     author: "Alex Johnson",
     date: "2024-03-01",
     category: "Security",
     type: "Whitepaper",
     image: aboutInnovationImg,
     slug: "cybersecurity-framework-guide"
+  },
+  {
+    id: 8,
+    title: "Cloud-Native Architecture: Design Patterns and Strategies",
+    excerpt: "In-depth analysis of microservices, containerization, and serverless computing for modern applications.",
+    author: "David Kim",
+    date: "2024-02-28",
+    category: "Cloud Engineering",
+    type: "Whitepaper",
+    image: apiDevImg,
+    slug: "cloud-native-architecture-patterns"
+  },
+  {
+    id: 9,
+    title: "Data Analytics and Business Intelligence Transformation",
+    excerpt: "Strategic framework for implementing data-driven decision making across enterprise organizations.",
+    author: "Priya Patel",
+    date: "2024-02-25",
+    category: "Data & Analytics",
+    type: "Whitepaper",
+    image: aiIntegrationImg,
+    slug: "data-analytics-bi-transformation"
+  },
+  
+  // Case Studies
+  {
+    id: 10,
+    title: "E-Commerce Platform Modernization: 300% Growth Case Study",
+    excerpt: "How we transformed a legacy retail platform into a high-performance e-commerce solution driving unprecedented growth.",
+    author: "Emma Thompson",
+    date: "2024-03-10",
+    category: "Technology & Media",
+    type: "Case Study",
+    image: webDevImg,
+    slug: "ecommerce-modernization-case-study"
+  },
+  {
+    id: 11,
+    title: "Healthcare Digital Transformation: Patient Care Revolution",
+    excerpt: "Complete digital overhaul of a major healthcare provider resulting in 40% improved patient satisfaction.",
+    author: "Dr. Rachel Martinez",
+    date: "2024-02-22",
+    category: "Healthcare & Lifesciences",
+    type: "Case Study",
+    image: mobileDevImg,
+    slug: "healthcare-digital-transformation"
+  },
+  {
+    id: 12,
+    title: "Financial Institution Cloud Migration Success Story",
+    excerpt: "Seamless migration of critical banking systems to cloud infrastructure with zero downtime and enhanced security.",
+    author: "James Wilson",
+    date: "2024-02-18",
+    category: "Financial Services",
+    type: "Case Study",
+    image: apiDevImg,
+    slug: "financial-cloud-migration-success"
+  },
+  {
+    id: 13,
+    title: "Manufacturing IoT Implementation: Smart Factory Case Study",
+    excerpt: "Industrial IoT deployment resulting in 35% efficiency improvement and predictive maintenance capabilities.",
+    author: "Carlos Rodriguez",
+    date: "2024-02-15",
+    category: "Manufacturing & IoT",
+    type: "Case Study",
+    image: aboutInnovationImg,
+    slug: "manufacturing-iot-smart-factory"
+  },
+  
+  // Guides & Innovations
+  {
+    id: 14,
+    title: "Cloud Migration Strategies for Enterprise Applications",
+    excerpt: "Comprehensive guide to successful cloud adoption with proven methodologies and risk mitigation strategies.",
+    author: "David Kim",
+    date: "2024-03-08",
+    category: "Cloud Engineering",
+    type: "Guide",
+    image: apiDevImg,
+    slug: "cloud-migration-strategies"
+  },
+  {
+    id: 15,
+    title: "AI Implementation Roadmap: From Concept to Production",
+    excerpt: "Step-by-step guide for organizations planning to integrate artificial intelligence into their operations.",
+    author: "Dr. Anita Singh",
+    date: "2024-02-12",
+    category: "AI & Machine Learning",
+    type: "Guide",
+    image: aiIntegrationImg,
+    slug: "ai-implementation-roadmap"
+  },
+  {
+    id: 16,
+    title: "API-First Development: Modern Integration Strategies",
+    excerpt: "Complete guide to designing, developing, and managing APIs for scalable microservices architecture.",
+    author: "Kevin Chen",
+    date: "2024-02-08",
+    category: "Software Development",
+    type: "Guide",
+    image: webDevImg,
+    slug: "api-first-development-guide"
+  },
+  {
+    id: 17,
+    title: "Zero Trust Security Model Implementation",
+    excerpt: "Practical guide to implementing zero trust architecture for enhanced organizational security posture.",
+    author: "Sarah Kumar",
+    date: "2024-02-05",
+    category: "Security",
+    type: "Guide",
+    image: aboutInnovationImg,
+    slug: "zero-trust-security-implementation"
+  },
+  {
+    id: 18,
+    title: "Machine Learning Operations (MLOps) Best Practices",
+    excerpt: "Comprehensive framework for deploying, monitoring, and maintaining machine learning models in production.",
+    author: "Dr. Alan Foster",
+    date: "2024-02-01",
+    category: "AI & Machine Learning",
+    type: "Guide",
+    image: aiIntegrationImg,
+    slug: "mlops-best-practices"
   }
 ];
 
 const categories = [
   "All Categories",
   "Healthcare & Lifesciences",
-  "Financial Services", 
-  "Technology & Media",
+  "Financial Services",
+  "Technology & Media", 
+  "Technology & Innovation",
   "Cloud Engineering",
   "UI/UX Design",
-  "Security"
+  "Security",
+  "Data & Analytics",
+  "Blockchain & Web3",
+  "Manufacturing & IoT",
+  "AI & Machine Learning",
+  "Software Development"
 ];
 
 const resourceTypes = [
@@ -164,7 +309,7 @@ const Blog = () => {
 
               {/* Category Filter */}
               <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
+                {categories.slice(0, 6).map((category) => (
                   <Button
                     key={category}
                     variant={selectedCategory === category ? "default" : "outline"}
@@ -176,7 +321,7 @@ const Blog = () => {
                         : "border-gray-600 text-gray-300 hover:border-neon-cyan hover:text-neon-cyan"
                     }`}
                   >
-                    {category}
+                    {category.replace(" & ", " ")}
                   </Button>
                 ))}
               </div>

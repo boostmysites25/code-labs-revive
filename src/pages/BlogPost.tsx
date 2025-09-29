@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Calendar, User, Share2, Twitter, Linkedin, Facebook, Clock, Tag } from "lucide-react";
 import SmoothScrollAnimation from "@/components/SmoothScrollAnimation";
+import { additionalBlogContent } from "@/data/blogContent";
 
 // Import images
 import aiIntegrationImg from "@/assets/ai-integration-service.jpg";
