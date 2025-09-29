@@ -3,12 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
-  Code, 
-  Smartphone, 
-  Zap, 
-  Database, 
-  Palette, 
-  Brain,
   ArrowRight,
   CheckCircle,
   Globe,
@@ -25,10 +19,18 @@ import uiuxService from "@/assets/uiux-design-service.jpg";
 import aiService from "@/assets/ai-integration-service.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 
+// Custom branded service icons
+import webDevIcon from "@/assets/icons/web-development-icon.webp";
+import mobileDevIcon from "@/assets/icons/mobile-development-icon.webp";
+import ampDevIcon from "@/assets/icons/amp-development-icon.webp";
+import apiDevIcon from "@/assets/icons/api-development-icon.webp";
+import uiuxDevIcon from "@/assets/icons/uiux-design-icon.webp";
+import aiIntegrationIcon from "@/assets/icons/ai-integration-icon.webp";
+
 const Services = () => {
   const services = [
     {
-      icon: Code,
+      icon: webDevIcon,
       title: "Website Development",
       description: "Custom websites built with modern technologies for optimal performance and user experience.",
       features: [
@@ -43,7 +45,7 @@ const Services = () => {
       image: webDevService
     },
     {
-      icon: Smartphone,
+      icon: mobileDevIcon,
       title: "Mobile App Development",
       description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
       features: [
@@ -58,7 +60,7 @@ const Services = () => {
       image: mobileDevService
     },
     {
-      icon: Zap,
+      icon: ampDevIcon,
       title: "AMP Development",
       description: "Lightning-fast AMP pages optimized for mobile performance and search engine visibility.",
       features: [
@@ -73,7 +75,7 @@ const Services = () => {
       image: ampDevService
     },
     {
-      icon: Database,
+      icon: apiDevIcon,
       title: "Custom APIs",
       description: "Robust and scalable API solutions to power your applications and integrations.",
       features: [
@@ -88,8 +90,8 @@ const Services = () => {
       image: apiDevService
     },
     {
-      icon: Palette,
-      title: "UI/UX Design", 
+      icon: uiuxDevIcon,
+      title: "UI/UX Design",
       description: "Beautiful and intuitive design solutions that combine retro aesthetics with modern usability.",
       features: [
         "User Research",
@@ -103,7 +105,7 @@ const Services = () => {
       image: uiuxService
     },
     {
-      icon: Brain,
+      icon: aiIntegrationIcon,
       title: "AI Integration",
       description: "Cutting-edge AI solutions to automate processes and enhance user interactions.",
       features: [
@@ -192,8 +194,8 @@ const Services = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-retro-gray/90 to-transparent"></div>
-                  <div className={`absolute top-4 right-4 w-12 h-12 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center`}>
-                    <service.icon className="w-6 h-6 text-white" />
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
+                    <img src={service.icon} alt={service.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <CardContent className="p-6">

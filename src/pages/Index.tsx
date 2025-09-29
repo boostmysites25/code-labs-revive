@@ -3,10 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
-  Code,
-  Smartphone,
-  Zap,
-  Brain,
   Star,
   ArrowRight,
   CheckCircle,
@@ -22,6 +18,12 @@ import mobilePortfolio1 from "@/assets/mobile-portfolio-1.jpg";
 import mobilePortfolio2 from "@/assets/mobile-portfolio-2.jpg";
 import aiPortfolio1 from "@/assets/ai-portfolio-1.jpg";
 import bannerVid from "../assets/videos/banner.mp4";
+
+// Custom branded service icons
+import webDevIcon from "@/assets/icons/web-development-icon.webp";
+import mobileDevIcon from "@/assets/icons/mobile-development-icon.webp";
+import ampDevIcon from "@/assets/icons/amp-development-icon.webp";
+import aiIntegrationIcon from "@/assets/icons/ai-integration-icon.webp";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,25 +60,25 @@ const Index = () => {
 
   const services = [
     {
-      icon: Code,
+      icon: webDevIcon,
       title: "Web Development",
       description:
         "Custom websites built with modern technologies and best practices for optimal performance.",
     },
     {
-      icon: Smartphone,
+      icon: mobileDevIcon,
       title: "App Development",
       description:
         "Native and cross-platform mobile applications that deliver exceptional user experiences.",
     },
     {
-      icon: Zap,
+      icon: ampDevIcon,
       title: "AMP Solutions",
       description:
         "Lightning-fast AMP pages optimized for mobile performance and search engine visibility.",
     },
     {
-      icon: Brain,
+      icon: aiIntegrationIcon,
       title: "AI Integrations",
       description:
         "Cutting-edge AI solutions to automate processes and enhance user interactions.",
@@ -344,8 +346,8 @@ const Index = () => {
                 className="bg-retro-gray border-retro-gray hover:border-neon-cyan transition-all duration-300 group animate-fade-in"
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-neon-cyan to-neon-pink rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <service.icon className="w-8 h-8 text-black" />
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                    <img src={service.icon} alt={service.title} className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
                     {service.title}
