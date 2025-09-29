@@ -29,8 +29,8 @@ import {
 import SmoothScrollAnimation from "@/components/SmoothScrollAnimation";
 import contactHero from "@/assets/contact-hero.jpg";
 import contactOffice from "@/assets/contact-office.jpg";
-import contactTeam from "@/assets/contact-team.jpg";
-import contactSupport from "@/assets/contact-support.jpg";
+import ourMission from "@/assets/mission.webp";
+import ourVision from "@/assets/vision.webp";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -104,32 +104,47 @@ ${formData.message}
       title: "Email",
       value: "Contact@retrocodelabs.in",
       description: "Send us an email anytime",
+      link: "mailto:Contact@retrocodelabs.in",
     },
     {
       icon: Phone,
-      title: "Phone",
+      title: "WhatsApp",
       value: "+91 8309836039",
-      description: "Mon-Fri from 9am to 6pm",
+      description: "Chat with us instantly",
+      link: "https://wa.me/918309836039",
     },
     {
       icon: MapPin,
       title: "Office",
-      value: "Office number 309, Ambadeep building- 3rd floor, Kg marg Connaught Place, Delhi",
+      value:
+        "Office number 309, Ambadeep building- 3rd floor, Kg marg Connaught Place, Delhi",
       description: "India",
+      link: "https://maps.google.com/?q=Connaught+Place+Delhi",
     },
     {
       icon: Clock,
-      title: "Response Time",
-      value: "Within 24 hours",
-      description: "We respond to all inquiries quickly",
+      title: "Business Hours",
+      value: "Mon-Fri: 9AM - 6PM",
+      description: "Weekend support available",
     },
   ];
 
   const socialLinks = [
-    { icon: Facebook, name: "Facebook", href: "#" },
-    { icon: Twitter, name: "Twitter", href: "#" },
-    { icon: Linkedin, name: "LinkedIn", href: "#" },
-    { icon: Instagram, name: "Instagram", href: "#" },
+    {
+      icon: Facebook,
+      name: "Facebook",
+      href: "https://www.facebook.com/share/1K4X6EY6e4/",
+    },
+    {
+      icon: Linkedin,
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/retrocode-labs/",
+    },
+    {
+      icon: Instagram,
+      name: "Instagram",
+      href: "https://www.instagram.com/retrocode_labs",
+    },
   ];
 
   return (
@@ -151,8 +166,8 @@ ${formData.message}
             </SmoothScrollAnimation>
             <SmoothScrollAnimation animation="slide-up" delay={400}>
               <p className="text-xl text-gray-300 mb-8">
-                Ready to start your project? We'd love to hear from you. Send us a
-                message and we'll respond as soon as possible.
+                Ready to start your project? We'd love to hear from you. Send us
+                a message and we'll respond as soon as possible.
               </p>
             </SmoothScrollAnimation>
           </div>
@@ -186,7 +201,7 @@ ${formData.message}
                             handleInputChange("name", e.target.value)
                           }
                           placeholder="Your full name"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange form-field"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange "
                         />
                       </div>
                       <div>
@@ -200,7 +215,7 @@ ${formData.message}
                             handleInputChange("email", e.target.value)
                           }
                           placeholder="your@email.com"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange form-field"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange "
                         />
                       </div>
                     </div>
@@ -216,7 +231,7 @@ ${formData.message}
                             handleInputChange("phone", e.target.value)
                           }
                           placeholder="+91 8309836039"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange form-field"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange "
                         />
                       </div>
                       <div>
@@ -228,7 +243,7 @@ ${formData.message}
                             handleInputChange("projectType", value)
                           }
                         >
-                          <SelectTrigger className="bg-retro-dark border-retro-dark text-white focus:border-brand-orange form-field">
+                          <SelectTrigger className="bg-retro-dark border-retro-dark text-white focus:border-brand-orange ">
                             <SelectValue placeholder="Select project type" />
                           </SelectTrigger>
                           <SelectContent className="bg-retro-dark border-retro-gray">
@@ -257,7 +272,7 @@ ${formData.message}
                         }
                         placeholder="Tell us about your project..."
                         rows={6}
-                        className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange resize-none form-field"
+                        className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange resize-none "
                       />
                     </div>
 
@@ -272,52 +287,10 @@ ${formData.message}
                   </form>
                 </CardContent>
               </Card>
-            </SmoothScrollAnimation>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <SmoothScrollAnimation animation="slide-left" delay={400}>
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-6">
-                    Contact Information
-                  </h2>
-                  <div className="space-y-6">
-                    {contactInfo.map((info, index) => (
-                      <SmoothScrollAnimation 
-                        key={index}
-                        animation="fade-in" 
-                        delay={600 + index * 100}
-                      >
-                        <Card className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300 card-hover hover-lift">
-                          <CardContent className="p-6">
-                            <div className="flex items-start space-x-4">
-                              <div className="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center flex-shrink-0 hover-rotate">
-                                <info.icon className="w-6 h-6 text-white" />
-                              </div>
-                              <div>
-                                <h3 className="text-lg font-semibold text-white mb-1">
-                                  {info.title}
-                                </h3>
-                                <p className="text-brand-orange font-medium mb-1 link-underline">
-                                  {info.value}
-                                </p>
-                                <p className="text-gray-400 text-sm">
-                                  {info.description}
-                                </p>
-                              </div>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </SmoothScrollAnimation>
-                    ))}
-                  </div>
-                </div>
-              </SmoothScrollAnimation>
-
-              {/* Social Media */}
-              <SmoothScrollAnimation animation="scale" delay={800}>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
+                <div className="pt-7">
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    Follow Us
+                  </h3>
                   <div className="flex flex-wrap gap-4">
                     {socialLinks.map((social, index) => (
                       <Button
@@ -332,9 +305,62 @@ ${formData.message}
                           className="flex items-center space-x-2 link-underline"
                         >
                           <social.icon className="w-5 h-5 hover-rotate" />
-                          <span className="hidden sm:inline">{social.name}</span>
+                          <span className="hidden sm:inline">
+                            {social.name}
+                          </span>
                         </a>
                       </Button>
+                    ))}
+                  </div>
+                </div>
+            </SmoothScrollAnimation>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <SmoothScrollAnimation animation="slide-left" delay={400}>
+                <div>
+                  <h2 className="text-2xl font-bold text-white mb-6">
+                    Contact Information
+                  </h2>
+                  <div className="space-y-6">
+                    {contactInfo.map((info, index) => (
+                      <SmoothScrollAnimation
+                        key={index}
+                        animation="fade-in"
+                        delay={600 + index * 100}
+                      >
+                        <Card className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300 card-hover hover-lift">
+                          <CardContent className="p-6">
+                            <div className="flex items-start space-x-4">
+                              <div className="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center flex-shrink-0 hover-rotate">
+                                <info.icon className="w-6 h-6 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="text-lg font-semibold text-white mb-1">
+                                  {info.title}
+                                </h3>
+                                {info.link ? (
+                                  <a
+                                    href={info.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-brand-orange font-medium mb-1 link-underline hover:text-brand-red transition-colors duration-300 block"
+                                  >
+                                    {info.value}
+                                  </a>
+                                ) : (
+                                  <p className="text-brand-orange font-medium mb-1">
+                                    {info.value}
+                                  </p>
+                                )}
+                                <p className="text-gray-400 text-sm">
+                                  {info.description}
+                                </p>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </SmoothScrollAnimation>
                     ))}
                   </div>
                 </div>
@@ -350,19 +376,19 @@ ${formData.message}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Meet Our <span className="gradient-text">Team</span>
+                Our <span className="gradient-text">Mission</span>
               </h2>
               <p className="text-xl text-gray-300 mb-6">
-                Our experienced team of developers, designers, and project
-                managers are dedicated to bringing your vision to life with
-                cutting-edge technology and innovative solutions.
+                To democratize technology by making cutting-edge digital solutions 
+                accessible to businesses of all sizes, empowering them to compete 
+                in the digital age with innovative, scalable, and cost-effective solutions.
               </p>
               <div className="space-y-4">
                 {[
-                  "Expert developers with 5+ years experience",
-                  "Dedicated project managers for seamless communication",
-                  "Creative designers with modern aesthetic vision",
-                  "24/7 support team for ongoing assistance",
+                  "Bridging the gap between complex technology and business needs",
+                  "Making AI and modern tech accessible to every business",
+                  "Empowering entrepreneurs with digital transformation",
+                  "Creating sustainable, long-term partnerships with our clients",
                 ].map((point, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-brand-orange rounded-full mr-4"></div>
@@ -373,8 +399,8 @@ ${formData.message}
             </div>
             <div className="animate-fade-in">
               <img
-                src={contactTeam}
-                alt="Our development team"
+                src={ourMission}
+                alt="Our mission in action - innovative technology solutions"
                 className="rounded-lg shadow-2xl border border-brand-orange"
               />
             </div>
@@ -383,26 +409,27 @@ ${formData.message}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 animate-fade-in">
               <img
-                src={contactSupport}
-                alt="Customer support"
+                src={ourVision}
+                alt="Our vision for the future - digital transformation"
                 className="rounded-lg shadow-2xl border border-brand-orange"
               />
             </div>
             <div className="order-1 lg:order-2 animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                World-Class <span className="gradient-text">Support</span>
+                Our <span className="gradient-text">Vision</span>
               </h2>
               <p className="text-xl text-gray-300 mb-6">
-                We believe in providing exceptional support throughout your
-                project and beyond. Our dedicated support team ensures your
-                success at every step.
+                To become the leading catalyst for digital transformation, where 
+                every business, regardless of size, can harness the power of 
+                artificial intelligence and modern technology to achieve unprecedented 
+                growth and success.
               </p>
               <div className="space-y-4">
                 {[
-                  "Rapid response within 24 hours",
-                  "Dedicated account manager for each project",
-                  "Comprehensive project documentation",
-                  "Post-launch monitoring and maintenance",
+                  "A world where technology serves humanity, not the other way around",
+                  "Every business empowered with AI-driven solutions",
+                  "Seamless integration of cutting-edge tech with human creativity",
+                  "Building the future of digital innovation, one project at a time",
                 ].map((point, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-brand-orange rounded-full mr-4"></div>

@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import Portfolio from "@/components/Portfolio";
+import { useState, useEffect, useRef } from "react";
 import {
   Star,
   ArrowRight,
@@ -10,6 +11,10 @@ import {
   Trophy,
   Rocket,
   User,
+  Code,
+  Smartphone,
+  Zap,
+  Brain,
 } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.jpg";
 import webPortfolio1 from "@/assets/web-portfolio-1.jpg";
@@ -19,11 +24,6 @@ import mobilePortfolio2 from "@/assets/mobile-portfolio-2.jpg";
 import aiPortfolio1 from "@/assets/ai-portfolio-1.jpg";
 import bannerVid from "../assets/videos/banner.mp4";
 
-// Custom branded service icons
-import webDevIcon from "@/assets/icons/web-development-icon.webp";
-import mobileDevIcon from "@/assets/icons/mobile-development-icon.webp";
-import ampDevIcon from "@/assets/icons/amp-development-icon.webp";
-import aiIntegrationIcon from "@/assets/icons/ai-integration-icon.webp";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,27 +58,86 @@ const Index = () => {
     );
   };
 
+  // Animated counter component
+  const AnimatedCounter = ({ 
+    end, 
+    duration = 2000, 
+    suffix = "", 
+    prefix = "" 
+  }: { 
+    end: number; 
+    duration?: number; 
+    suffix?: string; 
+    prefix?: string; 
+  }) => {
+    const [count, setCount] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !isVisible) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.3 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
+    }, [isVisible]);
+
+    useEffect(() => {
+      if (!isVisible) return;
+
+      let startTime: number;
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+        setCount(Math.floor(easeOutCubic * end));
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      requestAnimationFrame(animate);
+    }, [isVisible, end, duration]);
+
+    return (
+      <div ref={ref} className="text-3xl md:text-4xl font-bold gradient-text mb-2">
+        {prefix}{count}{suffix}
+      </div>
+    );
+  };
+
   const services = [
     {
-      icon: webDevIcon,
+      icon: Code,
       title: "Web Development",
       description:
         "Custom websites built with modern technologies and best practices for optimal performance.",
     },
     {
-      icon: mobileDevIcon,
+      icon: Smartphone,
       title: "App Development",
       description:
         "Native and cross-platform mobile applications that deliver exceptional user experiences.",
     },
     {
-      icon: ampDevIcon,
+      icon: Zap,
       title: "AMP Solutions",
       description:
         "Lightning-fast AMP pages optimized for mobile performance and search engine visibility.",
     },
     {
-      icon: aiIntegrationIcon,
+      icon: Brain,
       title: "AI Integrations",
       description:
         "Cutting-edge AI solutions to automate processes and enhance user interactions.",
@@ -310,15 +369,17 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "100+", label: "Projects Completed" },
-              { number: "50+", label: "Happy Clients" },
-              { number: "5+", label: "Years Experience" },
-              { number: "24/7", label: "Support Available" },
+              { number: 100, suffix: "+", label: "Projects Completed" },
+              { number: 50, suffix: "+", label: "Happy Clients" },
+              { number: 5, suffix: "+", label: "Years Experience" },
+              { number: 24, suffix: "/7", label: "Support Available" },
             ].map((stat, index) => (
               <div key={index} className="animate-fade-in">
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                  {stat.number}
-                </div>
+                <AnimatedCounter 
+                  end={stat.number} 
+                  suffix={stat.suffix}
+                  duration={2000 + (index * 200)}
+                />
                 <div className="text-gray-400">{stat.label}</div>
               </div>
             ))}
@@ -346,8 +407,8 @@ const Index = () => {
                 className="bg-retro-gray border-retro-gray hover:border-neon-cyan transition-all duration-300 group animate-fade-in"
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden group-hover:scale-110 transition-transform duration-300">
-                    <img src={service.icon} alt={service.title} className="w-full h-full object-cover" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-neon-cyan to-neon-pink rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="w-8 h-8 text-black" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
                     {service.title}
@@ -361,55 +422,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section className="section-padding bg-brand-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Featured <span className="gradient-text">Projects</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Explore some of our recent work and see how we bring ideas to
-              life.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0, 6).map((project, index) => (
-              <Card
-                key={index}
-                className="bg-retro-gray border-retro-gray overflow-hidden group hover:border-neon-cyan transition-all duration-300 animate-fade-in"
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-3">{project.description}</p>
-                  <div className="text-sm text-neon-cyan">{project.tech}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button
-              variant="outline"
-              className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300"
-              asChild
-            >
-              <Link to="/services">
-                View All Projects <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <Portfolio />
 
       {/* Testimonials Section */}
       <section className="section-padding bg-retro-dark">

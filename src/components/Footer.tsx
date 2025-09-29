@@ -17,6 +17,7 @@ const Footer = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Join Our Team", href: "https://forms.gle/DaDG5HiA2grfPZeT7" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -136,18 +137,31 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-white">Contact Info</h3>
               <div className="space-y-3">
-                <div className="flex items-center space-x-2 text-gray-400 text-sm hover-scale">
+                <a 
+                  href="mailto:Contact@retrocodelabs.in" 
+                  className="flex items-center space-x-2 text-gray-400 text-sm hover:text-brand-orange transition-colors duration-300 hover-scale"
+                >
                   <Mail size={16} className="hover-rotate" />
                   <span className="link-underline">Contact@retrocodelabs.in</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-400 text-sm hover-scale">
+                </a>
+                <a 
+                  href="https://wa.me/918309836039" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-400 text-sm hover:text-brand-orange transition-colors duration-300 hover-scale"
+                >
                   <Phone size={16} className="hover-rotate" />
-                  <span className="link-underline">+91 8309836039</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-400 text-sm hover-scale">
+                  <span className="link-underline">+91 8309836039 (WhatsApp)</span>
+                </a>
+                <a 
+                  href="https://maps.google.com/?q=Connaught+Place+Delhi" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-400 text-sm hover:text-brand-orange transition-colors duration-300 hover-scale"
+                >
                   <MapPin size={16} className="min-w-4 hover-rotate" />
-                  <span className="link-underline">Office number 309, Ambadeep building- 3rd floor, Kg marg Connaught Place, Delhi, India</span>
-                </div>
+                  <span className="link-underline">Office 309, Ambadeep building, 3rd floor, Connaught Place, Delhi</span>
+                </a>
               </div>
             </div>
           </SmoothScrollAnimation>
