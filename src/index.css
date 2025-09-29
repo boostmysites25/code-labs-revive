@@ -162,4 +162,123 @@ All colors MUST be HSL.
   .hover-glow:hover {
     box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3);
   }
+
+  /* Electric animations for hero section */
+  .electric-text {
+    background: linear-gradient(45deg, #00ffff, #ff6b35, #ff007f, #00ffff);
+    background-size: 400% 400%;
+    animation: electric-glow 2s ease-in-out infinite alternate, gradient-shift 3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .electric-button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .electric-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: electric-sweep 3s ease-in-out infinite;
+  }
+
+  .electric-button-outline {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .electric-button-outline::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffff, #ff6b35, #ff007f, #00ffff);
+    background-size: 400% 400%;
+    animation: gradient-shift 3s ease-in-out infinite;
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+/* Electric keyframe animations */
+@keyframes move-star-0 {
+  0% { transform: translateX(-100px) translateY(0px); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(-200px); }
+}
+
+@keyframes move-star-1 {
+  0% { transform: translateX(-100px) translateY(100px); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(-100px); }
+}
+
+@keyframes move-star-2 {
+  0% { transform: translateX(-100px) translateY(-50px); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(150px); }
+}
+
+@keyframes move-star-3 {
+  0% { transform: translateX(-100px) translateY(50px); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(-50px); }
+}
+
+@keyframes electric-glow {
+  0%, 100% { 
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px #00ffff,
+      0 0 35px #00ffff,
+      0 0 40px #00ffff;
+  }
+  50% { 
+    text-shadow: 
+      0 0 2px currentColor,
+      0 0 5px currentColor,
+      0 0 8px currentColor,
+      0 0 12px #ff6b35,
+      0 0 20px #ff6b35,
+      0 0 25px #ff6b35;
+  }
+}
+
+@keyframes text-flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96%, 98% { opacity: 0.8; }
+}
+
+@keyframes electric-particle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.5) rotate(180deg); opacity: 0.7; }
+}
+
+@keyframes lightning-flash {
+  0%, 90%, 100% { opacity: 0; }
+  5%, 85% { opacity: 0.6; }
+}
+
+@keyframes electric-grid {
+  0% { opacity: 0.2; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes electric-sweep {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
 }

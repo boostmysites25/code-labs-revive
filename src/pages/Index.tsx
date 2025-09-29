@@ -111,86 +111,110 @@ const Index = () => {
           <img 
             src={heroBanner} 
             alt="Modern tech workspace with coding and development setup"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark/95 to-brand-dark/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark/98 to-brand-dark/95"></div>
           
-          {/* Futuristic Grid Overlay */}
-          <div className="absolute inset-0 opacity-30">
+          {/* Electric Grid Overlay */}
+          <div className="absolute inset-0 opacity-40">
             <div 
-              className="w-full h-full"
+              className="w-full h-full animate-pulse"
               style={{
                 backgroundImage: `
-                  linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px)
+                  linear-gradient(rgba(0, 255, 255, 0.2) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(0, 255, 255, 0.2) 1px, transparent 1px)
                 `,
-                backgroundSize: '50px 50px',
-                animation: 'pulse 4s ease-in-out infinite'
+                backgroundSize: '60px 60px',
+                animation: 'electric-grid 3s ease-in-out infinite alternate'
               }}
             />
           </div>
         </div>
 
-        {/* Animated Sparkles and Floating Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Floating Sparkles */}
-          {[...Array(25)].map((_, i) => (
+        {/* Moving Stars and Electric Particles */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Moving Stars */}
+          {[...Array(30)].map((_, i) => (
             <div
-              key={`sparkle-${i}`}
-              className="absolute animate-pulse"
+              key={`star-${i}`}
+              className="absolute"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
+                animation: `move-star-${i % 4} ${8 + Math.random() * 4}s linear infinite`,
+                animationDelay: `${Math.random() * 5}s`
               }}
             >
-              <div 
-                className={`w-1 h-1 rounded-full ${
-                  i % 4 === 0 ? 'bg-neon-cyan shadow-[0_0_10px_#00ffff]' : 
-                  i % 4 === 1 ? 'bg-brand-orange shadow-[0_0_10px_#ff6b35]' : 
-                  i % 4 === 2 ? 'bg-neon-pink shadow-[0_0_10px_#ff007f]' :
-                  'bg-white shadow-[0_0_8px_#ffffff]'
-                }`}
-              />
+              <div className="relative">
+                <div 
+                  className={`w-2 h-2 ${
+                    i % 4 === 0 ? 'bg-neon-cyan shadow-[0_0_15px_#00ffff]' : 
+                    i % 4 === 1 ? 'bg-brand-orange shadow-[0_0_15px_#ff6b35]' : 
+                    i % 4 === 2 ? 'bg-neon-pink shadow-[0_0_15px_#ff007f]' :
+                    'bg-white shadow-[0_0_15px_#ffffff]'
+                  } rounded-full animate-pulse`}
+                />
+                {/* Star rays */}
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '3s' }}>
+                  <div className="absolute -top-1 left-1/2 w-0.5 h-4 bg-current transform -translate-x-1/2 opacity-80" />
+                  <div className="absolute top-1/2 -left-1 w-4 h-0.5 bg-current transform -translate-y-1/2 opacity-80" />
+                </div>
+              </div>
             </div>
           ))}
 
-          {/* Moving Light Orbs */}
-          {[...Array(8)].map((_, i) => (
+          {/* Electric Particles */}
+          {[...Array(40)].map((_, i) => (
             <div
-              key={`orb-${i}`}
-              className="absolute rounded-full opacity-40 animate-bounce"
+              key={`particle-${i}`}
+              className="absolute w-1 h-1 rounded-full animate-pulse"
               style={{
-                left: `${20 + Math.random() * 60}%`,
-                top: `${20 + Math.random() * 60}%`,
-                width: `${4 + Math.random() * 8}px`,
-                height: `${4 + Math.random() * 8}px`,
-                background: `radial-gradient(circle, ${
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                background: `${
                   i % 3 === 0 ? '#00ffff' : 
                   i % 3 === 1 ? '#ff6b35' : 
                   '#ff007f'
-                } 0%, transparent 70%)`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${4 + Math.random() * 2}s`
+                }`,
+                boxShadow: `0 0 10px currentColor`,
+                animation: `electric-particle ${2 + Math.random() * 3}s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 4}s`
               }}
             />
           ))}
 
-          {/* Diagonal Light Streaks */}
-          <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent transform -rotate-12 animate-pulse" />
-            <div className="absolute top-2/3 right-0 w-full h-0.5 bg-gradient-to-r from-transparent via-brand-orange/50 to-transparent transform rotate-12 animate-pulse" style={{ animationDelay: '2s' }} />
+          {/* Electric Lightning Streaks */}
+          <div className="absolute inset-0">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={`lightning-${i}`}
+                className="absolute h-0.5 bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-60"
+                style={{
+                  top: `${20 + i * 30}%`,
+                  left: `-20%`,
+                  width: '140%',
+                  transform: `rotate(${-15 + i * 10}deg)`,
+                  animation: `lightning-flash ${3 + i}s ease-in-out infinite`,
+                  animationDelay: `${i * 1.5}s`
+                }}
+              />
+            ))}
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in text-white leading-tight">
-              Bringing <span className="gradient-text glow-text">Retro Vibes</span> to{" "}
-              <span className="gradient-text glow-text">Modern Tech</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+              <span className="block mb-4">Bringing</span>
+              <span className="block gradient-text electric-text mb-4">
+                Retro Vibes
+              </span>
+              <span className="block">to</span>
+              <span className="block gradient-text electric-text">
+                Modern Tech
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed animate-fade-in">
               We create cutting-edge digital solutions that blend nostalgic aesthetics 
               with modern functionality. From web development to AI integrations, 
               we're your partners in digital transformation.
@@ -198,18 +222,18 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300 shadow-2xl hover:shadow-brand-orange/50 hover:scale-105 border border-brand-orange/30"
+                className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-bold hover:from-brand-red hover:to-brand-orange transition-all duration-300 shadow-2xl hover:shadow-brand-orange/50 hover:scale-110 border border-brand-orange/50 px-8 py-4 text-lg electric-button"
                 asChild
               >
-                <Link to="/contact">Start Your Project</Link>
+                <Link to="/contact">⚡ Start Your Project</Link>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300 shadow-xl hover:shadow-neon-cyan/30 hover:scale-105"
+                className="border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all duration-300 shadow-xl hover:shadow-neon-cyan/50 hover:scale-110 font-bold px-8 py-4 text-lg electric-button-outline"
                 asChild
               >
-                <Link to="/services">View Services</Link>
+                <Link to="/services">🚀 View Services</Link>
               </Button>
             </div>
           </div>
