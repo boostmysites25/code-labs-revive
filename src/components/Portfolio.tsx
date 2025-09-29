@@ -93,12 +93,12 @@ const Portfolio = () => {
                   <div className="text-sm text-neon-cyan capitalize">
                     {project.category} Development
                   </div>
-                  {project.link && (
+                  {(project as any).link && (
                     <Button
                       variant="ghost"
                       size="sm"
                       className="text-neon-cyan hover:text-white hover:bg-neon-cyan/10 transition-colors duration-300"
-                      onClick={() => window.open(project.link, "_blank")}
+                      onClick={() => window.open((project as any).link, "_blank")}
                     >
                       View Project →
                     </Button>
