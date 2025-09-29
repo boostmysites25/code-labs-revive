@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {
   Code,
   Smartphone,
@@ -23,6 +24,38 @@ import aiPortfolio1 from "@/assets/ai-portfolio-1.jpg";
 import bannerVid from "../assets/videos/banner.mp4";
 
 const Index = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Animated heading component
+  const AnimatedHeading = ({ text, className = "" }: { text: string; className?: string }) => {
+    const letters = text.split('');
+    
+    return (
+      <span className={className}>
+        {letters.map((letter, index) => (
+          <span
+            key={index}
+            className="inline-block hover:rotate-12 transition-transform duration-300 ease-in-out cursor-default"
+            style={{
+              animation: isVisible ? `slideInUp 0.6s ease-out ${index * 0.1}s forwards` : 'none',
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            }}
+          >
+            {letter === ' ' ? '\u00A0' : letter}
+          </span>
+        ))}
+      </span>
+    );
+  };
+
   const services = [
     {
       icon: Code,
@@ -137,7 +170,7 @@ const Index = () => {
               top: 0,
               left: 0,
               zIndex: 1,
-              opacity: 0.2,
+              opacity: 0.12,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark/98 to-brand-dark/95"></div>
@@ -238,10 +271,10 @@ const Index = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white !leading-tight">
-              <span className="gradient-text">AI-Powered</span> Solutions with 
-              <span className="gradient-text"> Retro Soul</span>
+          <div className="text-center max-w-5xl mx-auto">
+            <h1 className="text-4xl md:text-6xl lg:text-[5.25rem] font-semibold mb-6 text-white !leading-tight">
+              <AnimatedHeading text="AI-Powered" className="gradient-text" /> Solutions with 
+              <AnimatedHeading text=" Retro Soul" className="gradient-text" />
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in">
               We harness the power of artificial intelligence to create intelligent
