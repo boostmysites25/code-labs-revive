@@ -18,6 +18,7 @@ import {
   ExternalLink,
   ArrowRight
 } from "lucide-react";
+import SmoothScrollAnimation from "@/components/SmoothScrollAnimation";
 import aboutOffice from "@/assets/about-office.jpg";
 import aboutInnovation from "@/assets/about-innovation.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
@@ -173,13 +174,17 @@ const About = () => {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              About <span className="gradient-text">Retro Code Labs</span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 animate-fade-in">
-              We're a passionate team of developers, designers, and strategists who believe 
-              in creating digital experiences that are both nostalgic and futuristic.
-            </p>
+            <SmoothScrollAnimation animation="fade-in" delay={200}>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                About <span className="gradient-text">Retro Code Labs</span>
+              </h1>
+            </SmoothScrollAnimation>
+            <SmoothScrollAnimation animation="slide-up" delay={400}>
+              <p className="text-xl text-gray-300 mb-8">
+                We're a passionate team of developers, designers, and strategists who believe 
+                in creating digital experiences that are both nostalgic and futuristic.
+              </p>
+            </SmoothScrollAnimation>
           </div>
         </div>
       </section>
@@ -188,30 +193,34 @@ const About = () => {
       <section className="section-padding bg-retro-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our <span className="gradient-text">Story</span>
-              </h2>
-              <p className="text-gray-300 mb-6">
-                Founded in 2019, Retro Code Labs emerged from a simple idea: what if we could 
-                combine the nostalgic charm of retro design with the power of modern technology? 
-                Our founders, passionate about both vintage aesthetics and cutting-edge development, 
-                set out to create a company that would bridge the gap between past and future.
-              </p>
-              <p className="text-gray-300 mb-6">
-                Today, we've grown into a team of creative professionals who specialize in 
-                delivering digital solutions that not only look amazing but perform exceptionally. 
-                From startups to enterprises, we help businesses stand out in the digital landscape 
-                with our unique retro-modern approach.
-              </p>
-            </div>
-            <div className="animate-fade-in">
-              <img 
-                src={aboutInnovation}
-                alt="Digital innovation and technology"
-                className="rounded-lg shadow-2xl"
-              />
-            </div>
+            <SmoothScrollAnimation animation="slide-right" delay={100}>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Our <span className="gradient-text">Story</span>
+                </h2>
+                <p className="text-gray-300 mb-6">
+                  Founded in 2019, Retro Code Labs emerged from a simple idea: what if we could 
+                  combine the nostalgic charm of retro design with the power of modern technology? 
+                  Our founders, passionate about both vintage aesthetics and cutting-edge development, 
+                  set out to create a company that would bridge the gap between past and future.
+                </p>
+                <p className="text-gray-300 mb-6">
+                  Today, we've grown into a team of creative professionals who specialize in 
+                  delivering digital solutions that not only look amazing but perform exceptionally. 
+                  From startups to enterprises, we help businesses stand out in the digital landscape 
+                  with our unique retro-modern approach.
+                </p>
+              </div>
+            </SmoothScrollAnimation>
+            <SmoothScrollAnimation animation="slide-left" delay={300}>
+              <div className="hover-lift">
+                <img 
+                  src={aboutInnovation}
+                  alt="Digital innovation and technology"
+                  className="rounded-lg shadow-2xl transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,107,0,0.3)]"
+                />
+              </div>
+            </SmoothScrollAnimation>
           </div>
         </div>
       </section>
@@ -220,45 +229,49 @@ const About = () => {
       <section className="section-padding bg-retro-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <Card className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300 animate-fade-in overflow-hidden">
-              <div className="relative h-48">
-                <img 
-                  src={aboutMission} 
-                  alt="Mission control center"
-                  className="w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-retro-dark to-transparent"></div>
-              </div>
-              <CardContent className="p-8 text-center relative">
-                <Target className="w-16 h-16 mx-auto mb-6 text-neon-cyan" />
-                <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
-                <p className="text-gray-300">
-                  To create exceptional digital experiences that combine nostalgic design 
-                  elements with modern functionality, helping businesses connect with their 
-                  audiences in meaningful and memorable ways.
-                </p>
-              </CardContent>
-            </Card>
+            <SmoothScrollAnimation animation="scale" delay={100}>
+              <Card className="bg-retro-dark border-retro-dark hover:border-neon-cyan transition-all duration-300 card-hover overflow-hidden">
+                <div className="relative h-48">
+                  <img 
+                    src={aboutMission} 
+                    alt="Mission control center"
+                    className="w-full h-full object-cover opacity-60 transition-transform duration-500 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-retro-dark to-transparent"></div>
+                </div>
+                <CardContent className="p-8 text-center relative">
+                  <Target className="w-16 h-16 mx-auto mb-6 text-neon-cyan hover-rotate" />
+                  <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+                  <p className="text-gray-300">
+                    To create exceptional digital experiences that combine nostalgic design 
+                    elements with modern functionality, helping businesses connect with their 
+                    audiences in meaningful and memorable ways.
+                  </p>
+                </CardContent>
+              </Card>
+            </SmoothScrollAnimation>
 
-            <Card className="bg-retro-dark border-retro-dark hover:border-neon-pink transition-all duration-300 animate-fade-in overflow-hidden">
-              <div className="relative h-48">
-                <img 
-                  src={aboutVision} 
-                  alt="Futuristic vision concept"
-                  className="w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-retro-dark to-transparent"></div>
-              </div>
-              <CardContent className="p-8 text-center relative">
-                <Eye className="w-16 h-16 mx-auto mb-6 text-neon-pink" />
-                <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
-                <p className="text-gray-300">
-                  To be the leading agency in retro-modern digital design, setting new 
-                  standards for creativity and technical excellence while inspiring others 
-                  to embrace the perfect blend of vintage charm and contemporary innovation.
-                </p>
-              </CardContent>
-            </Card>
+            <SmoothScrollAnimation animation="scale" delay={300}>
+              <Card className="bg-retro-dark border-retro-dark hover:border-neon-pink transition-all duration-300 card-hover overflow-hidden">
+                <div className="relative h-48">
+                  <img 
+                    src={aboutVision} 
+                    alt="Futuristic vision concept"
+                    className="w-full h-full object-cover opacity-60 transition-transform duration-500 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-retro-dark to-transparent"></div>
+                </div>
+                <CardContent className="p-8 text-center relative">
+                  <Eye className="w-16 h-16 mx-auto mb-6 text-neon-pink hover-rotate" />
+                  <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
+                  <p className="text-gray-300">
+                    To be the leading agency in retro-modern digital design, setting new 
+                    standards for creativity and technical excellence while inspiring others 
+                    to embrace the perfect blend of vintage charm and contemporary innovation.
+                  </p>
+                </CardContent>
+              </Card>
+            </SmoothScrollAnimation>
           </div>
         </div>
       </section>

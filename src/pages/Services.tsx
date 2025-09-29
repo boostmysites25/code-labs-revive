@@ -10,6 +10,7 @@ import {
   BarChart,
   Lock
 } from "lucide-react";
+import SmoothScrollAnimation from "@/components/SmoothScrollAnimation";
 import servicesHero from "@/assets/services-hero.jpg";
 import webDevService from "@/assets/web-development-service.jpg";
 import mobileDevService from "@/assets/mobile-development-service.jpg";
@@ -163,20 +164,26 @@ const Services = () => {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Our <span className="gradient-text">Services</span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 animate-fade-in">
-              Comprehensive digital solutions that blend retro aesthetics with modern technology. 
-              From web development to AI integration, we've got you covered.
-            </p>
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-neon-cyan to-neon-pink text-black font-semibold hover:from-neon-pink hover:to-neon-cyan transition-all duration-300 animate-fade-in"
-              asChild
-            >
-              <Link to="/contact">Start Your Project</Link>
-            </Button>
+            <SmoothScrollAnimation animation="fade-in" delay={200}>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Our <span className="gradient-text">Services</span>
+              </h1>
+            </SmoothScrollAnimation>
+            <SmoothScrollAnimation animation="slide-up" delay={400}>
+              <p className="text-xl text-gray-300 mb-8">
+                Comprehensive digital solutions that blend retro aesthetics with modern technology. 
+                From web development to AI integration, we've got you covered.
+              </p>
+            </SmoothScrollAnimation>
+            <SmoothScrollAnimation animation="scale" delay={600}>
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-neon-cyan to-neon-pink text-black font-semibold hover:from-neon-pink hover:to-neon-cyan transition-all duration-300 hover-lift btn-pulse"
+                asChild
+              >
+                <Link to="/contact">Start Your Project</Link>
+              </Button>
+            </SmoothScrollAnimation>
           </div>
         </div>
       </section>
@@ -186,42 +193,49 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300 group animate-fade-in overflow-hidden">
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-retro-gray/90 to-transparent"></div>
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden">
-                    <img src={service.icon} alt={service.title} className="w-full h-full object-cover" />
+              <SmoothScrollAnimation 
+                key={index} 
+                animation="slide-up" 
+                delay={index * 100}
+                staggerDelay={index * 50}
+              >
+                <Card className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300 group card-hover overflow-hidden hover-lift">
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-retro-gray/90 to-transparent"></div>
+                    <div className="absolute top-4 right-4 w-12 h-12 bg-black/20 backdrop-blur-sm rounded-lg overflow-hidden hover-rotate">
+                      <img src={service.icon} alt={service.title} className="w-full h-full object-cover" />
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-                  <p className="text-gray-400 mb-6">{service.description}</p>
-                  
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-neon-cyan mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-neon-cyan transition-colors duration-300">{service.title}</h3>
+                    <p className="text-gray-400 mb-6">{service.description}</p>
+                    
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-sm text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-neon-cyan mr-2 flex-shrink-0 hover-scale" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
 
-                  <Button 
-                    variant="orange"
-                    className="w-full"
-                    asChild
-                  >
-                    <Link to={service.link}>
-                      Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                    <Button 
+                      variant="orange"
+                      className="w-full hover-lift transition-all duration-300"
+                      asChild
+                    >
+                      <Link to={service.link} className="link-underline">
+                        Learn More <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </SmoothScrollAnimation>
             ))}
           </div>
         </div>

@@ -26,6 +26,7 @@ import {
   Users,
   Award,
 } from "lucide-react";
+import SmoothScrollAnimation from "@/components/SmoothScrollAnimation";
 import contactHero from "@/assets/contact-hero.jpg";
 import contactOffice from "@/assets/contact-office.jpg";
 import contactTeam from "@/assets/contact-team.jpg";
@@ -143,13 +144,17 @@ ${formData.message}
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Get In <span className="gradient-text">Touch</span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 animate-fade-in">
-              Ready to start your project? We'd love to hear from you. Send us a
-              message and we'll respond as soon as possible.
-            </p>
+            <SmoothScrollAnimation animation="fade-in" delay={200}>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Get In <span className="gradient-text">Touch</span>
+              </h1>
+            </SmoothScrollAnimation>
+            <SmoothScrollAnimation animation="slide-up" delay={400}>
+              <p className="text-xl text-gray-300 mb-8">
+                Ready to start your project? We'd love to hear from you. Send us a
+                message and we'll respond as soon as possible.
+              </p>
+            </SmoothScrollAnimation>
           </div>
         </div>
       </section>
@@ -159,11 +164,11 @@ ${formData.message}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="animate-fade-in">
-              <Card className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300">
+            <SmoothScrollAnimation animation="slide-right" delay={200}>
+              <Card className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300 card-hover">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
-                    <MessageSquare className="w-6 h-6 text-brand-orange mr-3" />
+                    <MessageSquare className="w-6 h-6 text-brand-orange mr-3 hover-rotate" />
                     <h2 className="text-2xl font-bold text-white">
                       Send Us a Message
                     </h2>
@@ -181,7 +186,7 @@ ${formData.message}
                             handleInputChange("name", e.target.value)
                           }
                           placeholder="Your full name"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange form-field"
                         />
                       </div>
                       <div>
@@ -195,7 +200,7 @@ ${formData.message}
                             handleInputChange("email", e.target.value)
                           }
                           placeholder="your@email.com"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange form-field"
                         />
                       </div>
                     </div>
@@ -211,7 +216,7 @@ ${formData.message}
                             handleInputChange("phone", e.target.value)
                           }
                           placeholder="+91 8309836039"
-                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange"
+                          className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange form-field"
                         />
                       </div>
                       <div>
@@ -223,7 +228,7 @@ ${formData.message}
                             handleInputChange("projectType", value)
                           }
                         >
-                          <SelectTrigger className="bg-retro-dark border-retro-dark text-white focus:border-brand-orange">
+                          <SelectTrigger className="bg-retro-dark border-retro-dark text-white focus:border-brand-orange form-field">
                             <SelectValue placeholder="Select project type" />
                           </SelectTrigger>
                           <SelectContent className="bg-retro-dark border-retro-gray">
@@ -252,7 +257,7 @@ ${formData.message}
                         }
                         placeholder="Tell us about your project..."
                         rows={6}
-                        className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange resize-none"
+                        className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange resize-none form-field"
                       />
                     </div>
 
@@ -260,73 +265,80 @@ ${formData.message}
                       type="submit"
                       variant="orange"
                       size="lg"
-                      className="w-full"
+                      className="w-full hover-lift btn-pulse transition-all duration-300"
                     >
                       Send Message <Send className="ml-2 w-4 h-4" />
                     </Button>
                   </form>
                 </CardContent>
               </Card>
-            </div>
+            </SmoothScrollAnimation>
 
             {/* Contact Information */}
-            <div className="space-y-8 animate-fade-in">
-              <div>
-                <h2 className="text-2xl font-bold text-white mb-6">
-                  Contact Information
-                </h2>
-                <div className="space-y-6">
-                  {contactInfo.map((info, index) => (
-                    <Card
-                      key={index}
-                      className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300"
-                    >
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center flex-shrink-0">
-                            <info.icon className="w-6 h-6 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-white mb-1">
-                              {info.title}
-                            </h3>
-                            <p className="text-brand-orange font-medium mb-1">
-                              {info.value}
-                            </p>
-                            <p className="text-gray-400 text-sm">
-                              {info.description}
-                            </p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+            <div className="space-y-8">
+              <SmoothScrollAnimation animation="slide-left" delay={400}>
+                <div>
+                  <h2 className="text-2xl font-bold text-white mb-6">
+                    Contact Information
+                  </h2>
+                  <div className="space-y-6">
+                    {contactInfo.map((info, index) => (
+                      <SmoothScrollAnimation 
+                        key={index}
+                        animation="fade-in" 
+                        delay={600 + index * 100}
+                      >
+                        <Card className="bg-retro-gray border-brand-orange hover:border-brand-red transition-all duration-300 card-hover hover-lift">
+                          <CardContent className="p-6">
+                            <div className="flex items-start space-x-4">
+                              <div className="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center flex-shrink-0 hover-rotate">
+                                <info.icon className="w-6 h-6 text-white" />
+                              </div>
+                              <div>
+                                <h3 className="text-lg font-semibold text-white mb-1">
+                                  {info.title}
+                                </h3>
+                                <p className="text-brand-orange font-medium mb-1 link-underline">
+                                  {info.value}
+                                </p>
+                                <p className="text-gray-400 text-sm">
+                                  {info.description}
+                                </p>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </SmoothScrollAnimation>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </SmoothScrollAnimation>
 
               {/* Social Media */}
-              <div>
-                <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
-                <div className="flex flex-wrap gap-4">
-                  {socialLinks.map((social, index) => (
-                    <Button
-                      key={index}
-                      variant="outline"
-                      size="lg"
-                      className="border-brand-orange hover:border-brand-red hover:bg-brand-orange/10 transition-all duration-300"
-                      asChild
-                    >
-                      <a
-                        href={social.href}
-                        className="flex items-center space-x-2"
+              <SmoothScrollAnimation animation="scale" delay={800}>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
+                  <div className="flex flex-wrap gap-4">
+                    {socialLinks.map((social, index) => (
+                      <Button
+                        key={index}
+                        variant="outline"
+                        size="lg"
+                        className="border-brand-orange hover:border-brand-red hover:bg-brand-orange/10 transition-all duration-300 hover-lift"
+                        asChild
                       >
-                        <social.icon className="w-5 h-5" />
-                        <span className="hidden sm:inline">{social.name}</span>
-                      </a>
-                    </Button>
-                  ))}
+                        <a
+                          href={social.href}
+                          className="flex items-center space-x-2 link-underline"
+                        >
+                          <social.icon className="w-5 h-5 hover-rotate" />
+                          <span className="hidden sm:inline">{social.name}</span>
+                        </a>
+                      </Button>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </SmoothScrollAnimation>
             </div>
           </div>
         </div>
