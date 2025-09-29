@@ -367,10 +367,10 @@ All colors MUST be HSL.
 }
 
 /* Ensure gradient text is always visible */
-.gradient-text {
+/* .gradient-text {
   opacity: 1 !important;
   visibility: visible !important;
-}
+} */
 
 /* Force visibility for animated text */
 .animate-fade-in,

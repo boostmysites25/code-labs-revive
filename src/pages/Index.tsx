@@ -37,23 +37,11 @@ const Index = () => {
 
   // Animated heading component
   const AnimatedHeading = ({ text, className = "" }: { text: string; className?: string }) => {
-    const letters = text.split('');
-    
     return (
-      <span className={className}>
-        {letters.map((letter, index) => (
-          <span
-            key={index}
-            className="inline-block hover:rotate-12 transition-all duration-300 ease-in-out cursor-default"
-            style={{
-              animation: isVisible ? `slideInUp 0.6s ease-out ${index * 0.1}s forwards` : 'none',
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            }}
-          >
-            {letter === ' ' ? '\u00A0' : letter}
-          </span>
-        ))}
+      <span className={`${className} inline-block transition-all duration-1000 ease-out hover:scale-105 hover:rotate-1 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
+        {text}
       </span>
     );
   };
@@ -334,11 +322,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-6xl lg:text-[5.25rem] font-semibold mb-6 text-white !leading-tight">
-              <span className="gradient-text">
-                <AnimatedHeading text="AI-Powered" className="" />
-              </span> Solutions with 
-              <span className="gradient-text">
-                <AnimatedHeading text=" Retro Soul" className="" />
+              <span className="text-brand-orange">
+                <AnimatedHeading text=" AI-Powered " className="" />
+              </span> Solutions with  {' '}
+              <span className="text-brand-orange">
+                <AnimatedHeading text=" Retro Soul " className="" />
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in">
