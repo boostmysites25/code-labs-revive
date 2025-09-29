@@ -217,7 +217,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-0">
       {/* Hero Section */}
       <section className="relative section-padding bg-gradient-to-br from-retro-dark via-retro-blue to-retro-dark overflow-hidden">
         <div className="absolute inset-0 opacity-20">

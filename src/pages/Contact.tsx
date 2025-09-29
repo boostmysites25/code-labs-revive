@@ -148,7 +148,7 @@ ${formData.message}
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-0">
       {/* Hero Section */}
       <section className="relative section-padding overflow-hidden">
         <div

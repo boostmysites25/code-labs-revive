@@ -77,6 +77,9 @@ const Portfolio = () => {
                 />
               </div>
               <CardContent className="p-6">
+                <div className="text-sm text-neon-cyan capitalize mb-2">
+                  {project.category} Development
+                </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {project.title}
                 </h3>
@@ -89,20 +92,34 @@ const Portfolio = () => {
                     ? "Decentralized blockchain solutions and smart contracts"
                     : "Immersive gaming experiences with cutting-edge graphics"}
                 </p>
-                <div className="flex items-center justify-between">
-                  <div className="text-sm text-neon-cyan capitalize">
-                    {project.category} Development
-                  </div>
-                  {(project as any).link && (
+                <div className="">
+                  <div className="grid grid-cols-2 gap-2">
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-neon-cyan hover:text-white hover:bg-neon-cyan/10 transition-colors duration-300"
-                      onClick={() => window.open((project as any).link, "_blank")}
+                      className="text-neon-cyan hover:text-white hover:bg-neon-cyan/10 transition-colors duration-300 w-full"
+                      onClick={() =>
+                        window.open(
+                          `/case-study/${project.category}/${project.id}`,
+                          "_self"
+                        )
+                      }
                     >
-                      View Project →
+                      Case Study →
                     </Button>
-                  )}
+                    {(project as any).link && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-neon-cyan hover:text-white hover:bg-neon-cyan/10 transition-colors duration-300 w-full"
+                        onClick={() =>
+                          window.open((project as any).link, "_blank")
+                        }
+                      >
+                        Live Site →
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </CardContent>
             </Card>

@@ -96,7 +96,7 @@ const AIIntegration = () => {
 
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-0">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-retro-dark via-retro-blue to-retro-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
