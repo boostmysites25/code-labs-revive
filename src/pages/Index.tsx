@@ -20,6 +20,7 @@ import webPortfolio2 from "@/assets/web-portfolio-2.jpg";
 import mobilePortfolio1 from "@/assets/mobile-portfolio-1.jpg";
 import mobilePortfolio2 from "@/assets/mobile-portfolio-2.jpg";
 import aiPortfolio1 from "@/assets/ai-portfolio-1.jpg";
+import bannerVid from "../assets/videos/banner.mp4";
 
 const Index = () => {
   const services = [
@@ -112,12 +113,32 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-32 section-padding bg-brand-dark overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-32 pb-32 section-padding bg-brand-dark overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          {/* <img
             src={heroBanner}
             alt="Modern tech workspace with coding and development setup"
             className="w-full h-full object-cover opacity-10"
+          /> */}
+
+          <video
+            src={bannerVid}
+            autoPlay
+            muted
+            loop
+            playsInline
+            width="100%"
+            height="100%"
+            style={{
+              objectFit: "cover",
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              opacity: 0.2,
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark/98 to-brand-dark/95"></div>
 
@@ -207,7 +228,7 @@ const Index = () => {
                   top: `${20 + i * 30}%`,
                   left: `-20%`,
                   width: "140%",
-                  transform: `rotate(${-15 + i * 10}deg)`,
+                  transform: `rotate(${i % 2 === 0 ? -15 : 15 + i * 10}deg)`,
                   animation: `lightning-flash ${3 + i}s ease-in-out infinite`,
                   animationDelay: `${i * 1.5}s`,
                 }}
@@ -218,16 +239,15 @@ const Index = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
-              <span className="block mb-4">Bringing</span>
-              <span className="block gradient-text mb-4">Retro Vibes</span>
-              <span className="block">to</span>
-              <span className="block gradient-text">Modern Tech</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white !leading-tight">
+              <span className="gradient-text">AI-Powered</span> Solutions with 
+              <span className="gradient-text"> Retro Soul</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed animate-fade-in">
-              We create cutting-edge digital solutions that blend nostalgic
-              aesthetics with modern functionality. From web development to AI
-              integrations, we're your partners in digital transformation.
+            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in">
+              We harness the power of artificial intelligence to create intelligent
+              digital experiences that combine cutting-edge AI technology with
+              nostalgic design aesthetics. From smart automation to machine learning
+              integrations, we're your AI transformation partners.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
               <Button
