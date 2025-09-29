@@ -106,44 +106,81 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-32 section-padding bg-brand-dark overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={heroBanner} 
-            alt="Modern tech workspace with coding and development setup"
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 to-transparent"></div>
+      <section className="relative min-h-screen flex items-center justify-center bg-retro-dark overflow-hidden">
+        {/* Floating Tooltips */}
+        <div className="absolute top-20 left-10 md:left-20 animate-fade-in opacity-90">
+          <div className="bg-gradient-to-r from-brand-orange to-brand-red text-white p-4 rounded-lg shadow-lg max-w-xs relative">
+            <p className="text-sm font-medium">"We need an AI-powered mobile app that can handle real-time data processing"</p>
+            <div className="absolute -bottom-2 left-6 w-4 h-4 bg-gradient-to-r from-brand-orange to-brand-red transform rotate-45"></div>
+          </div>
         </div>
+
+        <div className="absolute top-32 right-10 md:right-20 animate-fade-in opacity-90" style={{ animationDelay: '0.5s' }}>
+          <div className="bg-gradient-to-r from-neon-cyan to-neon-pink text-black p-4 rounded-lg shadow-lg max-w-xs relative">
+            <p className="text-sm font-medium">"Can you build a modern e-commerce platform with seamless UX in 2 weeks?"</p>
+            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-gradient-to-r from-neon-cyan to-neon-pink transform rotate-45"></div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-40 left-16 md:left-32 animate-fade-in opacity-90" style={{ animationDelay: '1s' }}>
+          <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-lg shadow-lg max-w-xs relative">
+            <p className="text-sm font-medium">"Our startup needs a scalable web app with AI integrations and modern design"</p>
+            <div className="absolute -bottom-2 left-8 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 transform rotate-45"></div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-32 right-16 md:right-32 animate-fade-in opacity-90" style={{ animationDelay: '1.5s' }}>
+          <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white p-4 rounded-lg shadow-lg max-w-xs relative">
+            <p className="text-sm font-medium">"How quickly can you develop a custom CRM with analytics dashboard?"</p>
+            <div className="absolute -bottom-2 right-8 w-4 h-4 bg-gradient-to-r from-green-500 to-blue-500 transform rotate-45"></div>
+          </div>
+        </div>
+
+        {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-white">
-              Bringing <span className="gradient-text">Retro Vibes</span> to{" "}
-              <span className="gradient-text">Modern Tech</span>
+          <div className="text-center max-w-5xl mx-auto">
+            <div className="mb-6 animate-fade-in">
+              <span className="text-lg font-medium text-neon-cyan tracking-wider uppercase">Digital Innovation Studio</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 animate-fade-in leading-tight">
+              We Develop{" "}
+              <span className="block gradient-text">
+                Retro-Modern Apps
+              </span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 animate-fade-in">
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 animate-fade-in max-w-3xl mx-auto leading-relaxed">
               We create cutting-edge digital solutions that blend nostalgic aesthetics 
-              with modern functionality. From web development to AI integrations, 
-              we're your partners in digital transformation.
+              with modern functionality and AI-powered features.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
+                className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300 px-8 py-4 text-lg shadow-2xl hover:shadow-brand-orange/25 hover:scale-105"
                 asChild
               >
-                <Link to="/contact">Start Your Project</Link>
+                <Link to="/contact">Book a Call</Link>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 px-8 py-4 text-lg hover:scale-105"
                 asChild
               >
-                <Link to="/services">View Services</Link>
+                <Link to="/services">All Projects</Link>
               </Button>
             </div>
           </div>
+        </div>
+
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-brand-orange rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-neon-pink rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
       </section>
 
