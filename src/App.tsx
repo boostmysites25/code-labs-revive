@@ -17,6 +17,7 @@ import MobileDevelopment from "./pages/MobileDevelopment";
 import AIIntegration from "./pages/AIIntegration";
 import UIDesign from "./pages/UIDesign";
 import CaseStudyPage from "./pages/CaseStudyPage";
+import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/ai-integration" element={<AIIntegration />} />
             <Route path="/ui-design" element={<UIDesign />} />
             <Route path="/amp-development" element={<AMPDevelopment />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/case-study/:category/:id" element={<CaseStudyPage />} />
             <Route path="/insights" element={<Blog />} />
             <Route path="/insights/:slug" element={<BlogPost />} />

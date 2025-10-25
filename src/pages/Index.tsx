@@ -15,6 +15,13 @@ import {
   Smartphone,
   Zap,
   Brain,
+  Database,
+  Globe,
+  Shield,
+  Cpu,
+  Layers,
+  Cloud,
+  GitBranch,
 } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.jpg";
 import webPortfolio1 from "@/assets/web-portfolio-1.jpg";
@@ -351,6 +358,64 @@ const Index = () => {
               >
                 <Link to="/services">🚀 View Services</Link>
               </Button>
+            </div>
+          </div>
+
+          {/* Technology Icons Section */}
+          <div className="mt-16 animate-fade-in">
+            <div className="text-center mb-8">
+              <p className="text-sm text-gray-400 mb-6">Trusted by developers worldwide</p>
+            </div>
+            
+            {/* Technology Icons Grid */}
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              {/* Row 1 */}
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Code className="w-6 h-6 text-gray-400 group-hover:text-neon-cyan transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Database className="w-6 h-6 text-gray-400 group-hover:text-brand-orange transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Globe className="w-6 h-6 text-gray-400 group-hover:text-neon-pink transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Shield className="w-6 h-6 text-gray-400 group-hover:text-green-400 transition-colors duration-300" />
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Cpu className="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Layers className="w-6 h-6 text-gray-400 group-hover:text-purple-400 transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Cloud className="w-6 h-6 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <GitBranch className="w-6 h-6 text-gray-400 group-hover:text-orange-400 transition-colors duration-300" />
+                </div>
+              </div>
+
+              {/* Row 3 */}
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Brain className="w-6 h-6 text-gray-400 group-hover:text-pink-400 transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Zap className="w-6 h-6 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Smartphone className="w-6 h-6 text-gray-400 group-hover:text-indigo-400 transition-colors duration-300" />
+                </div>
+                <div className="w-12 h-12 bg-gray-800/50 rounded-full flex items-center justify-center hover:bg-gray-700/50 transition-all duration-300 group">
+                  <Rocket className="w-6 h-6 text-gray-400 group-hover:text-red-400 transition-colors duration-300" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

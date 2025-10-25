@@ -19,6 +19,8 @@ const CaseStudyPage = () => {
     p => p.category === category && p.id === parseInt(id || "0")
   );
 
+  console.log(project)
+
   if (!project) {
     return <NotFound />;
   }
