@@ -234,7 +234,7 @@ const CaseStudy = ({ project }: CaseStudyProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-brand-orange to-brand-red text-white hover:from-brand-red hover:to-brand-orange transition-all duration-300"
+              className="bg-gradient-to-r from-brand-orange to-brand-red text-black hover:from-brand-red hover:to-brand-orange transition-all duration-300"
               asChild
             >
               <Link to="/contact">Get Started</Link>

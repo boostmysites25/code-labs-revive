@@ -200,7 +200,7 @@ ${formData.description}
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <Button 
               type="submit"
-              className="flex-1 bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
+              className="flex-1 bg-gradient-to-r from-brand-orange to-brand-red text-black font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
             >
               Submit Quote Request
             </Button>

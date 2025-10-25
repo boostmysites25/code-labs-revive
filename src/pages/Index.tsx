@@ -345,7 +345,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-brand-orange to-brand-red text-white hover:from-brand-red hover:to-brand-orange transition-all duration-300 shadow-2xl hover:shadow-brand-orange/50 hover:scale-105 border border-brand-orange/50 px-8 py-4 electric-button"
+                className="bg-gradient-to-r from-brand-orange to-brand-red text-black hover:from-brand-red hover:to-brand-orange transition-all duration-300 shadow-2xl hover:shadow-brand-orange/50 hover:scale-105 border border-brand-orange/50 px-8 py-4 electric-button"
                 asChild
               >
                 <Link to="/contact">⚡ Start Your Project</Link>
@@ -549,7 +549,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
+              className="bg-gradient-to-r from-brand-orange to-brand-red text-black font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
               asChild
             >
               <Link to="/contact">

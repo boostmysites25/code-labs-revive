@@ -51,7 +51,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Button
-                className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300 hover-lift btn-pulse"
+                className="bg-gradient-to-r from-brand-orange to-brand-red text-black font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300 hover-lift btn-pulse"
                 onClick={() => setIsQuoteModalOpen(true)}
               >
                 Get a Quote
@@ -93,7 +93,7 @@ const Navbar = () => {
             ))}
             <div className="px-3 py-2">
               <Button
-                className="w-full bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover-lift"
+                className="w-full bg-gradient-to-r from-brand-orange to-brand-red text-black font-semibold hover-lift"
                 onClick={() => {
                   setIsQuoteModalOpen(true);
                   setIsOpen(false);

@@ -154,13 +154,13 @@ const Footer = () => {
                   <span className="link-underline">+91 8309836039 (WhatsApp)</span>
                 </a>
                 <a 
-                  href="https://maps.google.com/?q=Connaught+Place+Delhi" 
+                  href="https://maps.google.com/?q=PlotNo.80P,BlockB,KVRValley,Mallampet,Bachupally,K.VRangareddy,Quthbullapur,Hyderabad,Telangana,500043" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 text-gray-400 text-sm hover:text-brand-orange transition-colors duration-300 hover-scale"
+                  className="flex items-start space-x-2 text-gray-400 text-sm hover:text-brand-orange transition-colors duration-300 hover-scale"
                 >
                   <MapPin size={16} className="min-w-4 hover-rotate" />
-                  <span className="link-underline">Office 309, Ambadeep building, 3rd floor, Connaught Place, Delhi</span>
+                  <span className="link-underline">Plot No.80P, Block B, KVR Valley, Mallampet, Bachupally K.VRangareddy, Quthbullapur, Hyderabad, Telangana 500043</span>
                 </a>
               </div>
             </div>

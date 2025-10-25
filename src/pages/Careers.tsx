@@ -224,7 +224,7 @@ Best regards,
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-brand-orange to-brand-red text-white hover:from-brand-red hover:to-brand-orange transition-all duration-300 shadow-2xl hover:shadow-brand-orange/50 hover:scale-105 border border-brand-orange/50 px-8 py-4 text-lg font-semibold"
+                  className="bg-gradient-to-r from-brand-orange to-brand-red text-black hover:from-brand-red hover:to-brand-orange transition-all duration-300 shadow-2xl hover:shadow-brand-orange/50 hover:scale-105 border border-brand-orange/50 px-8 py-4 text-lg font-semibold"
                   onClick={() => openGmailApplication("General Application")}
                 >
                   🚀 Apply Now
@@ -379,7 +379,7 @@ Best regards,
                     </div>
 
                     <Button
-                      className="w-full bg-gradient-to-r from-brand-orange to-brand-red text-white hover:from-brand-red hover:to-brand-orange transition-all duration-300"
+                      className="w-full bg-gradient-to-r from-brand-orange to-brand-red text-black hover:from-brand-red hover:to-brand-orange transition-all duration-300"
                       onClick={() => openGmailApplication(job.title)}
                     >
                       Apply for this Position
@@ -407,7 +407,7 @@ Best regards,
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-brand-orange to-brand-red text-white font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
+                className="bg-gradient-to-r from-brand-orange to-brand-red text-black font-semibold hover:from-brand-red hover:to-brand-orange transition-all duration-300"
                 onClick={() => openGmailApplication("General Application")}
               >
                 Send Your Application
