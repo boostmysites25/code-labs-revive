@@ -230,7 +230,7 @@ ${formData.message}
                           onChange={(e) =>
                             handleInputChange("phone", e.target.value)
                           }
-                          placeholder="+91 8309836039"
+                          placeholder=""
                           className="bg-retro-dark border-retro-dark text-white placeholder:text-gray-400 focus:border-brand-orange "
                         />
                       </div>
