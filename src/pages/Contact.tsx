@@ -117,9 +117,9 @@ ${formData.message}
       icon: MapPin,
       title: "Office",
       value:
-        "Office number 309, Ambadeep building- 3rd floor, Kg marg Connaught Place, Delhi",
+        "Plot No.80P, Block B, KVR Valley, Mallampet, Bachupally K.VRangareddy, Quthbullapur, Hyderabad, Telangana 500043",
       description: "India",
-      link: "https://maps.google.com/?q=Connaught+Place+Delhi",
+      link: "https://maps.google.com/?q=PlotNo.80P,BlockB,KVRValley,Mallampet,Bachupally,K.VRangareddy,Quthbullapur,Hyderabad,Telangana,500043",
     },
     {
       icon: Clock,
